@@ -3,1087 +3,245 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow" data-publish>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Деревянные бытовки и хозблоки · {{компания}}</title>
-<meta name="description" content="Деревянные бытовки, хозблоки, туалеты и качели в {{город}}: калькулятор стоимости, состав цены списком, срок изготовления и доставка в договоре.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>БытовкаСтрой — деревянные бытовки: привезём и поставим сами</title>
+<meta name="description" content="Строим деревянные бытовки для стройки, дачи и охраны на своей базе. Сами привозим и устанавливаем на вашем участке. Стоимость назовём за 1 рабочий день.">
+<meta property="og:title" content="БытовкаСтрой — деревянные бытовки: привезём и поставим сами">
+<meta property="og:description" content="Строим деревянные бытовки для стройки, дачи и охраны на своей базе. Сами привозим и устанавливаем на вашем участке. Стоимость назовём за 1 рабочий день.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%274%27 y=%274%27 width=%2724%27 height=%2724%27 fill=%27none%27 stroke=%27%23d19352%27 stroke-width=%275%27/%3E%3C/svg%3E">
-<link rel="stylesheet" href="vibe.css">
-<style>
-  /* ---- тема (палитра В): графит и брус ------------------------------------ */
-  .v-page {
-    --v-canvas: #1b1f23; --v-surface: #252a2f;
-    --v-ink: #f1efea; --v-ink-soft: #aab0b6;
-    --v-accent: #d19352; --v-accent-ink: #1b1409;
-    --v-font-display: "Geologica", "Arial", system-ui, sans-serif;
-    --v-font-text: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-    --v-shadow-color: 0 0 0;
-    --v-e1: 0 1px 2px rgb(var(--v-shadow-color) / .08), 0 6px 18px rgb(var(--v-shadow-color) / .08);
-    --v-e2: 0 2px 6px rgb(var(--v-shadow-color) / .08), 0 18px 48px rgb(var(--v-shadow-color) / .12);
-    --v-radius: 4px;
-    --v-measure: 58ch;
-    transition: none;
-  }
-  .v-page .v-display { font-weight: 700; letter-spacing: -0.02em; }
-  .v-page .v-display--xl { letter-spacing: -0.03em; }
-  .v-page .v-btn { border-radius: 3px; box-shadow: none; }
-  .v-page a.v-btn { color: var(--v-accent-ink); }           /* перебивает .v-page a { color: inherit } */
-  .v-page .v-btn:hover { box-shadow: var(--v-e1); }
-  .v-page .v-label { font-weight: 500; }
-  .v-page img { content-visibility: auto; }
-
-  /* ---- шапка: закреплённое меню, телефон, кнопка заказа ---------------------------------- */
-  html { scroll-padding-top: 4.5rem; }
-  .v-page { --hdr-h: 3.75rem; }
-  .hdr { position: fixed; z-index: 40; inset: 0 0 auto 0; height: var(--hdr-h); background: color-mix(in oklab, var(--v-canvas) 90%, transparent);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--v-hair-strong); }
-  .hdr__in { height: 100%; width: min(100% - 2 * var(--v-gutter), 84rem); margin-inline: auto; display: flex; align-items: center; gap: clamp(.75rem, 2vw, 2rem); }
-  .hdr__logo { display: inline-flex; align-items: center; gap: .55em; font-family: var(--v-font-display); font-weight: 700; font-size: var(--v-t-base); letter-spacing: -.01em; text-decoration: none; white-space: nowrap; min-width: 0; }
-  .hdr__logo i { flex: none; width: .7em; height: .7em; border: .18em solid var(--v-accent); }
-  .hdr__logo span { overflow: hidden; text-overflow: ellipsis; }
-  .hdr__nav { display: flex; align-items: center; gap: clamp(.9rem, 1.8vw, 1.9rem); margin-left: auto; font-size: var(--v-t-sm); font-weight: 500; }
-  .hdr__nav a { text-decoration: none; color: var(--v-ink); padding: .5rem 0; border-bottom: 2px solid transparent; white-space: nowrap; transition: color .2s var(--v-ease-out), border-color .2s var(--v-ease-out); }
-  .hdr__nav a.is-on { border-bottom-color: var(--v-accent); }
-  .hdr__navtel { display: none; }
-  .hdr__tel { display: inline-flex; align-items: center; gap: .5em; text-decoration: none; font-family: var(--v-font-display); font-weight: 600; font-size: var(--v-t-sm); white-space: nowrap; color: var(--v-ink); padding: .5rem 0; }
-  .hdr__tel svg { color: var(--v-accent); flex: none; }
-  .v-page a.v-btn.hdr__cta { padding: .7em 1.15em; font-size: var(--v-t-sm); white-space: nowrap; min-height: 0; }
-  .hdr__burger { display: none; }
-  @media (hover: hover) and (pointer: fine) { .hdr__nav a:hover, .hdr__tel:hover { color: var(--v-accent); } }
-  @media (max-width: 1100px) { .hdr__nav a:nth-child(4), .hdr__nav a:nth-child(5) { display: none; } }
-  @media (max-width: 860px) {
-    .v-page { --hdr-h: 3.5rem; }
-    .hdr__in { gap: .6rem; }
-    .hdr__logo { margin-right: auto; }
-    .hdr__tel { width: 2.5rem; height: 2.5rem; justify-content: center; padding: 0; border: 1px solid var(--v-hair-strong); border-radius: 3px; }
-    .hdr__tel span { display: none; }
-    .v-page a.v-btn.hdr__cta { padding: .62em .85em; font-size: .72rem; }
-    .hdr__burger { display: inline-flex; flex-direction: column; justify-content: center; gap: 4px; width: 2.5rem; height: 2.5rem; padding: 0 .6rem; border: 1px solid var(--v-hair-strong); border-radius: 3px; background: transparent; cursor: pointer; }
-    .hdr__burger i { display: block; height: 2px; background: var(--v-ink); transition: transform .25s var(--v-ease-out), opacity .2s; }
-    .hdr__burger[aria-expanded="true"] i:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-    .hdr__burger[aria-expanded="true"] i:nth-child(2) { opacity: 0; }
-    .hdr__burger[aria-expanded="true"] i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-    .hdr__nav { position: absolute; top: 100%; left: 0; right: 0; margin: 0; flex-direction: column; align-items: stretch; gap: 0; padding: .4rem var(--v-gutter) 1rem;
-      background: var(--v-canvas); border-bottom: 1px solid var(--v-hair-strong); box-shadow: var(--v-e2); font-size: var(--v-t-base);
-      visibility: hidden; opacity: 0; transform: translateY(-6px); transition: opacity .2s var(--v-ease-out), transform .2s var(--v-ease-out), visibility 0s .2s; }
-    .hdr__nav.is-open { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
-    .hdr__nav a, .hdr__nav a:nth-child(4), .hdr__nav a:nth-child(5) { display: block; padding: .95rem 0; border-bottom: 1px solid var(--v-hair); }
-    .hdr__nav a.hdr__navtel { display: block; font-family: var(--v-font-display); font-weight: 600; color: var(--v-accent); border-bottom: 0; }
-    .folio-m { top: var(--hdr-h); }
-  }
-  @media (max-width: 380px) { .hdr__logo span { max-width: 6.5rem; } }
-
-  /* ---- фолио на полях: линия стройки ------------------------------------ */
-  .folio { position: fixed; z-index: 30; left: clamp(1.1rem, 2.6vw, 2.4rem); top: 50%; transform: translateY(-50%);
-    height: min(36vh, 22rem); width: 1px; pointer-events: none; }
-  .folio__line { position: absolute; inset: 0; background: var(--v-hair-strong); }
-  .folio__fill { position: absolute; left: 0; top: 0; width: 1px; height: 0; background: var(--v-accent); transform-origin: top; }
-  .folio__dot { position: absolute; left: 50%; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: 50%;
-    background: var(--v-canvas); box-shadow: inset 0 0 0 1px var(--v-hair-strong); transition: background-color .3s var(--v-ease-out), box-shadow .3s var(--v-ease-out), transform .3s var(--v-ease-out); }
-  .folio__dot.is-done { background: var(--v-accent); box-shadow: inset 0 0 0 1px var(--v-accent); }
-  .folio__dot.is-active { background: var(--v-accent); box-shadow: 0 0 0 4px var(--v-canvas), 0 0 0 5px var(--v-accent); transform: scale(1.15); }
-  .folio__dot span { position: absolute; left: 1rem; top: -.1rem; writing-mode: vertical-rl; white-space: nowrap;
-    font-size: var(--v-t-xs); letter-spacing: var(--v-track-wide); text-transform: uppercase; font-weight: 500; color: var(--v-ink-soft);
-    opacity: 0; transition: opacity .15s var(--v-ease-out), color .3s; transition-delay: 0s; }
-  .folio__dot span b { color: var(--v-ink); font-weight: 600; margin-bottom: .5em; }
-  .folio__dot.is-active span { opacity: 1; transition-duration: .3s; transition-delay: .15s; }
-  .folio__cta { position: absolute; left: 50%; bottom: calc(100% + 1.4rem); transform: translateX(-50%); writing-mode: vertical-rl; white-space: nowrap; pointer-events: auto;
-    font-size: var(--v-t-xs); letter-spacing: var(--v-track-wide); text-transform: uppercase; font-weight: 600; color: var(--v-accent); text-decoration: none;
-    padding: .5rem .5rem; margin-bottom: -.5rem; }
-  .folio.is-dark { --v-ink: #1c2226; --v-ink-soft: #5a6269; --v-accent: #8f5626; --v-accent-ink: #fbf3e8; --v-canvas: #e7e9e6;
-    --v-hair-strong: color-mix(in oklab, #1c2226 30%, transparent); }
-  .folio.is-dark .folio__dot span b { color: #1c2226; }
-  .folio.is-dark .folio__dot span { color: #5a6269; }
-  .folio.is-warm { --v-ink: #fbf3e8; --v-ink-soft: #f0dfc9; --v-canvas: #8f5626; --v-accent: #fbf3e8;
-    --v-hair-strong: color-mix(in oklab, #fbf3e8 55%, transparent); }
-  .folio.is-warm .folio__dot span b { color: #fbf3e8; }
-  .folio.is-warm .folio__dot span { color: #f0dfc9; }
-  .folio.is-warm .folio__cta { color: #fbf3e8; }
-  .folio-m { display: none; }
-  @media (max-width: 860px) {
-    .folio { display: none; }
-    .folio-m { display: flex; align-items: center; justify-content: space-between; gap: var(--v-3); position: fixed; z-index: 30; inset: 0 0 auto 0;
-      padding: .6rem var(--v-gutter) .55rem; font-size: .75rem; letter-spacing: .05em; text-transform: uppercase; font-weight: 500;
-      color: var(--v-ink-soft); background: color-mix(in oklab, var(--v-canvas) 90%, transparent); backdrop-filter: blur(8px); pointer-events: none;
-      transform: translateY(-100%); transition: transform .3s var(--v-ease-out); }
-    .folio-m.is-on { transform: none; }
-    .folio-m b { color: var(--v-ink); font-weight: 600; }
-    .folio-m a { pointer-events: auto; color: var(--v-accent); font-weight: 600; text-decoration: none; padding: .8rem 0 .8rem .75rem; margin: -.8rem 0; white-space: nowrap; }
-    .folio-m__bar { position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--v-accent); transform-origin: left; transform: scaleX(0); }
-    .folio-m.is-dark { --v-ink: #1c2226; --v-ink-soft: #5a6269; --v-accent: #8f5626; --v-accent-ink: #fbf3e8; --v-canvas: #e7e9e6; }
-    .folio-m.is-warm { --v-ink: #fbf3e8; --v-ink-soft: #f0dfc9; --v-canvas: #8f5626; }
-    .folio-m.is-warm a { color: #fbf3e8; }
-  }
-
-  /* ---- титульный лист: «стройка наоборот», закреплённая сцена --------------------- */
-  /* Четыре кадра одного ракурса лежат стопкой: дом сверху, под ним каркас, фундамент, участок.
-     Свой JS ведёт прозрачность трёх верхних от --v-p акта (скрипт внизу страницы). */
-  .cover { background: #1b1f23; }
-  .cover__stack { position: absolute; inset: 0; z-index: 1; }
-  .v-page .cover__img { position: absolute; inset: 0; width: 100%; max-width: none; height: 100%; object-fit: cover; object-position: 62% 50%; content-visibility: visible; will-change: opacity; }
-  .cover__scrim { position: absolute; inset: 0; z-index: 2; pointer-events: none;
-    background:
-      linear-gradient(to right, rgb(27 31 35 / .9) 0%, rgb(27 31 35 / .78) 36%, rgb(27 31 35 / .4) 58%, rgb(27 31 35 / 0) 80%),
-      linear-gradient(to top, rgb(27 31 35 / .45) 0%, rgb(27 31 35 / 0) 22%); }
-  .cover .title { position: relative; z-index: 6; height: 100svh; display: flex; flex-direction: column; justify-content: space-between; padding-block: calc(var(--hdr-h) + var(--v-4)) var(--v-5); }
-  .title__head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--v-4); padding-bottom: var(--v-4); border-bottom: 1px solid var(--v-hair-strong); }
-  .title__mark { font-family: var(--v-font-display); font-weight: 700; font-size: var(--v-t-base); letter-spacing: -.01em; text-decoration: none; display: inline-flex; align-items: center; gap: .5em; }
-  .title__mark i { width: .7em; height: .7em; border: .18em solid var(--v-accent); display: inline-block; }
-  .title__body { position: relative; z-index: 6; padding-block: clamp(1rem, 3vh, 2.5rem); max-width: 60rem; }
-  .title__body .v-label { display: block; margin-bottom: var(--v-5); }
-  .title__body h1 { font-size: clamp(2.4rem, 1rem + 4.6vw, 5.4rem); line-height: .96; max-width: 16ch; }
-  .title__body .v-lede { margin-top: var(--v-5); max-width: 40ch; color: var(--v-ink); }
-  .title__body .v-lede b { font-weight: 600; }
-  .title__cta { margin-top: var(--v-5); display: flex; flex-direction: column; align-items: flex-start; gap: var(--v-4); }
-  /* цена одной колонкой под кнопкой, на плашке бумаги: никогда не лежит на фото */
-  .title__price { font-size: var(--v-t-base); line-height: 1.45; max-width: 40ch; color: var(--v-ink); text-wrap: pretty;
-    background: rgb(27 31 35 / .92); border: 1px solid var(--v-hair-strong); border-radius: var(--v-radius); padding: .7rem .95rem .75rem; }
-  .title__price b { font-family: var(--v-font-display); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .title__price span { display: block; color: var(--v-ink-soft); }
-  .title__foot { position: relative; z-index: 6; display: flex; justify-content: space-between; align-items: end; gap: var(--v-4); padding-top: var(--v-4); border-top: 1px solid var(--v-hair-strong); font-size: var(--v-t-sm); color: var(--v-ink-soft); }
-  .title__foot b { font-family: var(--v-font-display); font-weight: 600; color: var(--v-accent); font-variant-numeric: tabular-nums; margin-right: .6em; }
-  /* подпись состояния: справа внизу, четыре варианта стопкой, активный виден. Меняется вместе с кадром */
-  .cover__state { display: grid; text-align: right; color: var(--v-ink); font-weight: 500; }
-  .cover__state span { grid-area: 1 / 1; opacity: 0; transform: translateY(5px); white-space: nowrap;
-    transition: opacity .28s var(--v-ease-out), transform .28s var(--v-ease-out); }
-  .cover__state span.is-on { opacity: 1; transform: none; }
-  .cover__state i { font-style: normal; font-size: var(--v-t-xs); letter-spacing: var(--v-track-wide); text-transform: uppercase; color: var(--v-ink-soft); margin-right: .7em; }
-  /* шкала сцены: четыре точки у правого края, активная подсвечена, пройденные закрашены */
-  .cover__scale { position: absolute; z-index: 6; right: clamp(1.1rem, 2.6vw, 2.4rem); top: 50%; transform: translateY(-50%); margin: 0; padding: 0; list-style: none; display: grid; gap: 1.3rem; pointer-events: none; }
-  .cover__scale::before { content: ""; position: absolute; left: 50%; top: 4px; bottom: 4px; width: 1px; margin-left: -.5px; background: var(--v-hair-strong); }
-  .cover__scale li { position: relative; width: 9px; height: 9px; border-radius: 50%; background: var(--v-canvas); box-shadow: inset 0 0 0 1px var(--v-hair-strong);
-    transition: background-color .3s var(--v-ease-out), box-shadow .3s var(--v-ease-out), transform .3s var(--v-ease-out); }
-  .cover__scale li.is-done { background: var(--v-accent); box-shadow: inset 0 0 0 1px var(--v-accent); }
-  .cover__scale li.is-on { background: var(--v-accent); box-shadow: 0 0 0 4px var(--v-canvas), 0 0 0 5px var(--v-accent); transform: scale(1.15); }
-  @media (max-width: 860px) {
-    /* телефон: кадры лентой в верхней половине экрана с привязкой к дому, текст внизу на полосе-скриме */
-    .cover, .cover [data-v-stage] { background: var(--v-canvas); }
-    .cover__stack { top: -7svh; bottom: auto; height: 64svh; }   /* планшет: дом в верхней половине */
-    .v-page .cover__img { object-position: 62% 50%; }
-    .cover__scrim { background:
-      linear-gradient(to top, rgb(27 31 35 / .97) 0%, rgb(27 31 35 / .97) 48%, rgb(27 31 35 / .8) 56%, rgb(27 31 35 / 0) 66%),
-      linear-gradient(to bottom, rgb(27 31 35 / .75) 0%, rgb(27 31 35 / 0) 14%); }
-    .cover .title { padding-top: calc(var(--hdr-h) + var(--v-3)); padding-bottom: var(--v-4); justify-content: flex-start; }
-    .title__head { flex-direction: column; gap: var(--v-1); }
-    .title__body { margin-top: auto; padding-block: 0 var(--v-4); }
-    .title__body .v-label { margin-bottom: var(--v-3); }
-    .title__body h1 { font-size: clamp(1.75rem, .9rem + 5vw, 2.6rem); max-width: none; }
-    .title__body .v-lede { margin-top: var(--v-3); font-size: var(--v-t-base); }
-    .title__cta { margin-top: var(--v-4); gap: var(--v-3); }
-    .title__price { max-width: none; padding: .6rem .8rem .65rem; }
-    /* подвал распадается на элементы колонки: подпись состояния уходит над текст, номер кадра остаётся внизу */
-    .title__foot { display: contents; }
-    .title__foot > span { order: 4; padding-top: var(--v-3); border-top: 1px solid var(--v-hair-strong); font-size: var(--v-t-xs); color: var(--v-ink); }
-    .cover__state { order: 2; text-align: left; font-size: var(--v-t-sm); margin-bottom: var(--v-2); }
-    .cover__scale { top: 11svh; right: .85rem; gap: .75rem; transform: none; }
-    .cover__scale li { width: 7px; height: 7px; }
-  }
-  @media (max-width: 600px) {
-    .cover .title { padding-top: calc(var(--hdr-h) + var(--v-2)); }
-    .title__head { flex-direction: row; align-items: baseline; padding-bottom: var(--v-3); }
-    .title__head .v-label { font-size: .68rem; }
-    .cover__stack { top: -17svh; }   /* телефон: дом целиком над текстовой полосой */
-    .title__body > .v-label { display: none; }
-    .title__price span { display: none; }   /* на телефоне вторая фраза уходит: дом должен остаться в кадре */
-  }
-  /* ноутбук: экран низкий, титул ужимаем, чтобы кнопка и цена остались над сгибом */
-  @media (min-width: 861px) and (max-height: 840px) {
-    .title__body { padding-block: var(--v-4) var(--v-4); }
-    .title__body .v-label { margin-bottom: var(--v-3); }
-    .title__body h1 { font-size: clamp(2.4rem, 1rem + 4.2vw, 4.6rem); }
-    .title__body .v-lede { margin-top: var(--v-4); font-size: var(--v-t-base); }
-    .title__cta { margin-top: var(--v-4); gap: var(--v-3); }
-    .title__price { max-width: 46ch; padding: .55rem .85rem .6rem; }
-    .cover .title { padding-block: var(--v-4) var(--v-3); }
-    .title__head { padding-bottom: var(--v-3); }
-    .title__foot { padding-top: var(--v-3); }
-  }
-
-  /* ---- оглавление: кинолента этапов -------------------------------------------- */
-  .toc { padding-block: var(--v-6) var(--v-7); border-bottom: 1px solid var(--v-hair); }
-  .toc__head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--v-4); margin-bottom: var(--v-5); }
-  .toc__head p { font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 46ch; text-align: right; }
-  .toc ol { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--v-4); margin: 0; padding: 0; list-style: none; }
-  .toc a { display: grid; gap: var(--v-3); text-decoration: none; font-size: var(--v-t-sm); font-weight: 500; }
-  .toc a img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--v-radius); background: var(--v-surface); }
-  .toc a span { display: block; padding-bottom: var(--v-2); border-bottom: 1px solid var(--v-hair); }
-  .toc a b { font-family: var(--v-font-display); font-weight: 600; color: var(--v-accent); margin-right: .5em; font-variant-numeric: tabular-nums; }
-  @media (max-width: 860px) {
-    .toc__head { flex-direction: column; align-items: start; gap: var(--v-2); }
-    .toc__head p { text-align: left; }
-    .toc ol { grid-auto-flow: column; grid-auto-columns: 44%; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--v-2);
-      margin-inline: calc(-1 * var(--v-gutter)); padding-inline: var(--v-gutter); scrollbar-width: none; }
-    .toc ol::-webkit-scrollbar { display: none; }
-    .toc li { scroll-snap-align: start; }
-  }
-
-  /* ---- интертитры ---------------------------------------------------------- */
-  .inter { background: var(--v-surface); border-top: 1px solid var(--v-hair); border-bottom: 1px solid var(--v-hair);
-    min-height: 54svh; display: flex; align-items: center; padding-block: var(--v-8); }
-  .inter__grid { display: grid; grid-template-columns: auto 1fr; gap: var(--v-4) clamp(1.5rem, 5vw, 5rem); align-items: end; }
-  .inter__num { font-family: var(--v-font-display); font-weight: 700; font-size: clamp(6rem, 18vw, 17rem); line-height: .8; letter-spacing: -.05em;
-    color: transparent; -webkit-text-stroke: 2px color-mix(in oklab, var(--v-ink) 38%, transparent); font-variant-numeric: tabular-nums; }
-  .inter__num em { font-style: normal; color: var(--v-accent); -webkit-text-stroke: 0; }
-  .inter__text { padding-bottom: .6em; }
-  .inter__text .v-label { display: block; margin-bottom: var(--v-3); }
-  .inter__text h2 { font-size: var(--v-t-3xl); }
-  .inter__text p { margin-top: var(--v-4); max-width: 44ch; color: var(--v-ink-soft); }
-  .inter--wood { background: #8f5626; --v-ink: #fbf3e8; --v-ink-soft: #f0dfc9; color: var(--v-ink); border-color: transparent;
-    --v-hair-strong: color-mix(in oklab, #fbf3e8 55%, transparent); }
-  .inter--wood .inter__num em { color: #fbf3e8; }
-  .inter--dark { background: #e7e9e6; --v-ink: #1c2226; --v-ink-soft: #5a6269; --v-accent: #8f5626; --v-accent-ink: #fbf3e8; color: var(--v-ink); border-color: transparent;
-    --v-hair-strong: color-mix(in oklab, #1c2226 30%, transparent); }
-  @media (max-width: 860px) {
-    .inter { min-height: 46svh; padding-block: var(--v-7); }
-    .inter__grid { grid-template-columns: 1fr; align-items: start; }
-    .inter__num { font-size: clamp(5rem, 26vw, 8rem); }
-    .inter__text h2 { font-size: var(--v-t-2xl); }
-  }
-
-  /* ---- разворот главы ------------------------------------------------------- */
-  .spread { display: grid; grid-template-columns: 7fr 5fr; gap: var(--v-8) clamp(2rem, 6vw, 6rem); align-items: start; }
-  .spread--flip { grid-template-columns: 5fr 7fr; }
-  .spread--flip .spread__fig { order: 2; }
-  .spread__fig { position: relative; margin: 0; }
-  .spread__fig .fig { position: relative; overflow: hidden; aspect-ratio: 16 / 11; background: var(--v-surface); border-radius: var(--v-radius); }
-  .spread__fig .fig > div { position: absolute; left: 0; right: 0; top: -36px; bottom: -36px; will-change: transform; }
-  .spread__fig .fig img { width: 100%; height: 100%; object-fit: cover; }
-  .spread__fig figcaption { display: grid; grid-template-columns: auto 1fr; gap: var(--v-3); padding-top: var(--v-3); font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 52ch; }
-  .spread__fig figcaption b { font-family: var(--v-font-display); font-weight: 600; color: var(--v-accent); font-variant-numeric: tabular-nums; }
-  .spread__copy { padding-top: var(--v-2); }
-  .spread__copy .v-label { display: block; margin-bottom: var(--v-3); }
-  .spread__copy h2 { font-size: var(--v-t-2xl); }
-  .spread__copy > p { margin-top: var(--v-5); color: var(--v-ink-soft); }
-  .spread__copy > p b { color: var(--v-ink); font-weight: 600; }
-  .facts { margin-top: var(--v-6); }
-  .facts > div { padding: var(--v-4) 0; border-top: 1px solid var(--v-hair); display: grid; grid-template-columns: minmax(8rem, 11rem) 1fr; gap: var(--v-4); font-size: var(--v-t-sm); }
-  .facts > div:last-child { border-bottom: 1px solid var(--v-hair); }
-  .facts dt { font-weight: 600; margin: 0; }
-  .facts dd { margin: 0; color: var(--v-ink-soft); }
-  .chapter--dark { background: #e7e9e6; --v-ink: #1c2226; --v-ink-soft: #5a6269; --v-accent: #8f5626; --v-accent-ink: #fbf3e8; --v-surface: #f5f6f4; color: var(--v-ink);
-    --v-hair: color-mix(in oklab, #1c2226 16%, transparent); --v-hair-strong: color-mix(in oklab, #1c2226 30%, transparent); }
-  .chapter--dark .facts dt { letter-spacing: .005em; }
-  @media (max-width: 860px) {
-    .spread, .spread--flip { grid-template-columns: 1fr; gap: var(--v-6); }
-    .spread--flip .spread__fig { order: 0; }
-    .spread__fig .fig { aspect-ratio: 4 / 3; }
-    .facts > div { grid-template-columns: 1fr; gap: var(--v-1); }
-  }
-
-  /* ---- глава 5: построенные объекты, слоты под настоящие фото ------------------ */
-  .built { margin-top: var(--v-8); padding-top: var(--v-5); border-top: 1px solid var(--v-hair); }
-  .built__head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--v-4); margin-bottom: var(--v-5); }
-  .built__head p { font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 44ch; text-align: right; }
-  .built ul { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--v-5); }
-  .built figure { margin: 0; }
-  .built .fig { position: relative; aspect-ratio: 4 / 3; border-radius: var(--v-radius); overflow: hidden; background: var(--v-surface); }
-  .built .fig img { width: 100%; height: 100%; object-fit: cover; }
-  .built .fig--slot { display: grid; place-items: center; box-shadow: inset 0 0 0 1px var(--v-hair-strong);
-    background: repeating-linear-gradient(-45deg, transparent 0 14px, color-mix(in oklab, var(--v-ink) 4%, transparent) 14px 15px), var(--v-surface); }
-  .built .fig--slot span { font-size: var(--v-t-xs); letter-spacing: var(--v-track-wide); text-transform: uppercase; color: var(--v-ink-soft); font-weight: 500; }
-  .built figcaption { display: grid; grid-template-columns: auto 1fr; gap: var(--v-3); padding-top: var(--v-3); font-size: var(--v-t-sm); color: var(--v-ink-soft); }
-  .built figcaption b { font-family: var(--v-font-display); font-weight: 600; color: var(--v-accent); font-variant-numeric: tabular-nums; }
-  @media (max-width: 860px) {
-    .built__head { flex-direction: column; align-items: start; gap: var(--v-2); }
-    .built__head p { text-align: left; }
-    .built ul { grid-template-columns: 1fr; }
-  }
-
-  /* ---- глава 2: сцена держится ---------------------------------------------- */
-  .frame { height: 100%; display: grid; grid-template-columns: 5fr 7fr; }
-  .frame__copy { position: relative; padding: 0 clamp(1.5rem, 5vw, 5rem) 0 calc(var(--v-gutter) + clamp(1.5rem, 3vw, 3rem)); }
-  .frame__head { position: absolute; left: calc(var(--v-gutter) + clamp(1.5rem, 3vw, 3rem)); top: clamp(2rem, 6vh, 4rem); }
-  .frame__cue { position: absolute; left: calc(var(--v-gutter) + clamp(1.5rem, 3vw, 3rem)); right: clamp(1.5rem, 5vw, 5rem); top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; padding-block: clamp(5rem, 12vh, 7rem) clamp(4rem, 10vh, 6rem); }
-  .frame__cue > * { max-width: 34rem; }
-  .frame__cue .v-label { display: block; margin-bottom: var(--v-3); color: var(--v-accent); }
-  .frame__cue h3 { font-family: var(--v-font-display); font-weight: 700; font-size: clamp(1.7rem, 1.1rem + 1.7vw, 2.7rem); line-height: 1.04; letter-spacing: -.02em; text-wrap: balance; }
-  .frame__cue p { margin-top: var(--v-4); color: var(--v-ink-soft); max-width: 40ch; }
-  .frame__cue p b { color: var(--v-ink); font-weight: 600; }
-  .frame__steps { position: absolute; left: calc(var(--v-gutter) + clamp(1.5rem, 3vw, 3rem)); bottom: clamp(2rem, 6vh, 4rem); display: flex; gap: var(--v-3); align-items: center; }
-  .frame__steps i { display: block; width: 2.4rem; height: 2px; background: var(--v-hair-strong); transform-origin: left; }
-  .frame__steps i::after { content: ""; display: block; height: 100%; width: 100%; background: var(--v-accent); transform-origin: left; transform: scaleX(0); }
-  .frame__steps i:nth-child(1)::after { transform: scaleX(clamp(0, calc(var(--v-p, 0) / .33), 1)); }
-  .frame__steps i:nth-child(2)::after { transform: scaleX(clamp(0, calc((var(--v-p, 0) - .33) / .33), 1)); }
-  .frame__steps i:nth-child(3)::after { transform: scaleX(clamp(0, calc((var(--v-p, 0) - .66) / .34), 1)); }
-  .frame__fig { position: relative; overflow: hidden; }
-  .frame__fig > div { position: absolute; left: 0; right: 0; top: -6vh; bottom: -6vh; will-change: transform; }
-  .frame__fig img { width: 100%; height: 100%; object-fit: cover; }
-  .frame__fig figcaption { position: absolute; right: var(--v-gutter); bottom: clamp(1.5rem, 5vh, 3rem); font-size: var(--v-t-xs); letter-spacing: var(--v-track-wide); text-transform: uppercase; font-weight: 500;
-    color: var(--v-ink); background: color-mix(in oklab, var(--v-canvas) 92%, transparent); padding: .5em .8em; border-radius: var(--v-radius); }
-  @media (max-width: 860px) {
-    .frame { grid-template-columns: 1fr; grid-template-rows: 44svh 1fr; }
-    .frame__fig { order: 0; }
-    .frame__copy { order: 1; padding: 0 var(--v-gutter); }
-    .frame__head { left: var(--v-gutter); top: var(--v-5); }
-    .frame__cue { left: var(--v-gutter); right: var(--v-gutter); padding-block: 3.5rem 3rem; }
-    .frame__cue h3 { font-size: var(--v-t-xl); }
-    .frame__cue p { font-size: var(--v-t-sm); }
-    .frame__steps { left: var(--v-gutter); bottom: var(--v-5); }
-    .frame__fig figcaption { bottom: var(--v-4); right: var(--v-gutter); }
-  }
-
-  /* ---- что входит в цену ----------------------------------------------------- */
-  .estimate { display: grid; grid-template-columns: 7fr 4fr; gap: var(--v-8) clamp(2rem, 6vw, 6rem); align-items: start; }
-  .estimate__intro { max-width: 52ch; }
-  .estimate__intro h2 { font-size: var(--v-t-2xl); }
-  .estimate__intro p { margin-top: var(--v-5); color: var(--v-ink-soft); }
-  .lines { margin-top: var(--v-7); }
-  .lines li { display: grid; grid-template-columns: 2.2rem 1fr; gap: var(--v-2) var(--v-4); padding: var(--v-4) 0; border-top: 1px solid var(--v-hair); }
-  .lines li:last-child { border-bottom: 1px solid var(--v-hair); }
-  .lines li > span { font-family: var(--v-font-display); font-weight: 600; font-size: var(--v-t-sm); color: var(--v-accent); font-variant-numeric: tabular-nums; padding-top: .15em; }
-  .lines h3 { font-weight: 600; font-size: var(--v-t-base); }
-  .lines p { grid-column: 2; color: var(--v-ink-soft); font-size: var(--v-t-sm); max-width: 56ch; }
-  .lines p b { color: var(--v-ink); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .estimate__fig { position: sticky; top: var(--v-8); margin: 0; }
-  .estimate__fig .fig { overflow: hidden; aspect-ratio: 3 / 4; border-radius: var(--v-radius); background: var(--v-surface); }
-  .estimate__fig .fig img { width: 100%; height: 100%; object-fit: cover; }
-  .estimate__fig figcaption { padding-top: var(--v-3); font-size: var(--v-t-sm); color: var(--v-ink-soft); }
-  @media (max-width: 860px) {
-    .estimate { grid-template-columns: 1fr; gap: var(--v-6); }
-    .estimate__fig { position: static; }
-    .estimate__fig .fig { aspect-ratio: 4 / 3; }
-  }
-
-  /* ---- колофон: как начинаем и расчёт -------------------------------------------- */
-  .colophon { background: var(--v-surface); border-top: 1px solid var(--v-hair); padding-block: var(--v-9) var(--v-6); }
-  .colophon__grid { display: grid; grid-template-columns: 7fr 5fr; gap: var(--v-7) clamp(2rem, 6vw, 6rem); align-items: start; }
-  .colophon h2 { font-size: var(--v-t-3xl); max-width: 12ch; }
-  .colophon .v-label { display: block; margin-bottom: var(--v-3); }
-  .colophon .colophon__price { margin-top: var(--v-6); font-size: var(--v-t-lg); line-height: 1.35; max-width: 34ch; text-wrap: pretty; }
-  .colophon__price b { font-family: var(--v-font-display); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .colophon__price span { display: block; font-size: var(--v-t-sm); color: var(--v-ink-soft); margin-top: var(--v-2); }
-  .colophon .lines { margin-top: var(--v-7); }
-  .colophon .lines h3 { font-size: var(--v-t-sm); }
-  .colophon .colophon__season { margin-top: var(--v-5); font-size: var(--v-t-sm); color: var(--v-ink-soft); }
-  .colophon__season b { color: var(--v-ink); font-weight: 600; }
-  .colophon__meta { display: grid; gap: var(--v-4); font-size: var(--v-t-sm); color: var(--v-ink-soft); padding-top: var(--v-2); }
-  .crew { display: flex; align-items: center; gap: var(--v-4); padding-bottom: var(--v-5); border-bottom: 1px solid var(--v-hair); }
-  .crew__photo { flex: none; width: 4.5rem; height: 4.5rem; border-radius: 50%; overflow: hidden; background: var(--v-canvas); box-shadow: inset 0 0 0 1px var(--v-hair-strong);
-    display: grid; place-items: center; font-size: var(--v-t-xs); letter-spacing: var(--v-track-wide); text-transform: uppercase; font-weight: 500; }
-  .crew__photo img { width: 100%; height: 100%; object-fit: cover; }
-  .crew__text b { display: block; color: var(--v-ink); font-weight: 600; font-size: var(--v-t-base); }
-  .colophon__tel { text-decoration: none; color: var(--v-ink); font-weight: 600; font-size: var(--v-t-lg); font-family: var(--v-font-display); justify-self: start; padding: .2em 0; }
-  .colophon__msg { display: flex; flex-wrap: wrap; gap: var(--v-2) var(--v-3); align-items: baseline; }
-  .colophon__msg a { color: var(--v-ink); font-weight: 500; text-decoration-color: var(--v-accent); text-underline-offset: .22em; padding: .7em 0; display: inline-block; }
-  .colophon__meta .v-btn { justify-self: start; margin-top: var(--v-2); }
-  .colophon .colophon__after { margin-top: var(--v-2); font-size: var(--v-t-sm); max-width: 36ch; }
-  .colophon .colophon__after a { color: var(--v-ink); text-decoration-color: var(--v-accent); }
-  .colophon__foot { margin-top: var(--v-9); padding-top: var(--v-4); border-top: 1px solid var(--v-hair); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--v-2) var(--v-5);
-    font-size: var(--v-t-xs); color: var(--v-ink-soft); letter-spacing: .01em; }
-  .colophon__foot a { color: inherit; display: inline-block; padding: .9em 0; margin: -.9em 0; }
-  @media (max-width: 860px) {
-    .colophon { padding-block: var(--v-8) var(--v-5); }
-    .colophon__grid { grid-template-columns: 1fr; gap: var(--v-7); }
-    .colophon h2 { font-size: var(--v-t-2xl); }
-    .colophon__foot { margin-top: var(--v-7); }
-  }
-
-  /* ---- каталог: шахматка из четырёх изделий ------------------------------------------ */
-  .cat__head { margin-bottom: var(--v-7); max-width: 52ch; }
-  .cat__head .v-label { display: block; margin-bottom: var(--v-3); }
-  .cat__head h2 { font-size: var(--v-t-2xl); }
-  .cat__head p { margin-top: var(--v-4); color: var(--v-ink-soft); }
-  .cat { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--v-7) clamp(1.5rem, 4vw, 4rem); margin: 0; padding: 0; list-style: none; }
-  .cat__item { grid-column: span 5; display: grid; gap: var(--v-4); align-content: start; }
-  .cat__item--lead { grid-column: span 7; }
-  .cat__item figure { margin: 0; overflow: hidden; border-radius: var(--v-radius); background: var(--v-surface); aspect-ratio: 4 / 3; }
-  .cat__item img { width: 100%; height: 100%; object-fit: cover; }
-  .cat__copy .v-label { display: block; margin-bottom: var(--v-2); color: var(--v-accent); }
-  .cat__copy h3 { font-family: var(--v-font-display); font-weight: 700; font-size: var(--v-t-xl); line-height: 1.1; letter-spacing: -.015em; text-wrap: balance; }
-  .cat__copy dl { margin: var(--v-4) 0 0; }
-  .cat__copy dl > div { display: grid; grid-template-columns: 6.5rem 1fr; gap: var(--v-3); padding: .6rem 0; border-top: 1px solid var(--v-hair); font-size: var(--v-t-sm); }
-  .cat__copy dl > div:last-child { border-bottom: 1px solid var(--v-hair); }
-  .cat__copy dt { font-weight: 600; margin: 0; }
-  .cat__copy dd { margin: 0; color: var(--v-ink-soft); }
-  .cat__copy dd b { color: var(--v-ink); font-family: var(--v-font-display); font-weight: 600; white-space: nowrap; }
-  .cat__link { display: inline-block; margin-top: var(--v-3); padding: .7em 0; color: var(--v-accent); font-weight: 600; font-size: var(--v-t-sm); text-decoration-thickness: 1px; text-underline-offset: .22em; }
-  @media (min-width: 861px) { .cat__item--lead:nth-child(4) { grid-column: 6 / span 7; } .cat__item:nth-child(3) { margin-top: calc(-1 * var(--v-8)); } }
-  @media (max-width: 860px) { .cat { grid-template-columns: 1fr; } .cat__item, .cat__item--lead { grid-column: auto; } }
-
-  /* ---- калькулятор ---------------------------------------------------------------------- */
-  .calc-sec { background: var(--v-surface); border-top: 1px solid var(--v-hair); border-bottom: 1px solid var(--v-hair); }
-  .calc { display: grid; grid-template-columns: 7fr 5fr; gap: var(--v-7) clamp(2rem, 5vw, 5rem); align-items: start; }
-  .calc__form { display: grid; gap: var(--v-6); }
-  .calc fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
-  .calc fieldset[hidden] { display: none; }
-  .calc legend { padding: 0; margin-bottom: var(--v-3); font-weight: 600; display: flex; gap: .7em; align-items: baseline; }
-  .calc legend b { font-family: var(--v-font-display); color: var(--v-accent); font-variant-numeric: tabular-nums; }
-  .seg, .chk { display: flex; flex-wrap: wrap; gap: var(--v-2); }
-  .seg label, .chk label { position: relative; cursor: pointer; }
-  .seg input, .chk input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
-  .seg span, .chk span { display: block; padding: .75em 1.05em; border: 1px solid var(--v-hair-strong); border-radius: 3px; font-size: var(--v-t-sm); font-weight: 500; background: var(--v-canvas); min-height: 2.75rem; line-height: 1.3;
-    transition: background-color .2s var(--v-ease-out), border-color .2s var(--v-ease-out), color .2s var(--v-ease-out); }
-  .seg small, .chk small { display: block; color: var(--v-ink-soft); font-weight: 400; font-size: var(--v-t-xs); }
-  .seg input:checked + span, .chk input:checked + span { background: var(--v-accent); border-color: var(--v-accent); color: var(--v-accent-ink); }
-  .seg input:checked + span small, .chk input:checked + span small { color: inherit; opacity: .85; }
-  .seg input:focus-visible + span, .chk input:focus-visible + span { outline: 2px solid var(--v-ink); outline-offset: 2px; }
-  .calc__out { position: sticky; top: var(--v-7); background: var(--v-canvas); border: 1px solid var(--v-hair-strong); border-radius: var(--v-radius); padding: var(--v-5); display: grid; gap: var(--v-3); }
-  .calc .calc__sum { font-family: var(--v-font-display); font-weight: 700; font-size: clamp(2.2rem, 1.4rem + 2.6vw, 3.6rem); line-height: 1; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
-  .calc__sum b { font-weight: 700; }
-  .calc__rows { margin: 0; padding: 0; list-style: none; font-size: var(--v-t-sm); }
-  .calc__rows li { display: flex; justify-content: space-between; gap: var(--v-4); padding: .5rem 0; border-top: 1px solid var(--v-hair); color: var(--v-ink-soft); }
-  .calc__rows li b { color: var(--v-ink); font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .calc .calc__meta, .calc .calc__alt { font-size: var(--v-t-sm); color: var(--v-ink-soft); }
-  .calc__alt a { color: var(--v-ink); font-weight: 600; text-decoration-color: var(--v-accent); }
-  .calc__out .v-btn { justify-self: start; }
-  .calc .calc__demo { font-size: var(--v-t-xs); color: var(--v-ink-soft); padding-top: var(--v-3); border-top: 1px solid var(--v-hair); }
-  @media (max-width: 860px) { .calc { grid-template-columns: 1fr; } .calc__out { position: static; } }
-
-  /* ---- общее ---------------------------------------------------------------------- */
-  .v-page .v-wrap { width: min(100% - 2 * var(--v-gutter) - 2 * clamp(0rem, 4vw, 3.5rem), 76rem); margin-inline: auto; }
-  @media (max-width: 860px) { .v-page .v-wrap { width: min(100% - 2 * var(--v-gutter), 76rem); } }
-  @media (hover: hover) and (pointer: fine) {
-    .toc a:hover, .title__mark:hover, .colophon__msg a:hover { color: var(--v-accent); }
-    .toc a:hover img { opacity: .92; }
-    .folio__cta:hover { text-decoration: underline; text-underline-offset: .2em; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500;700&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/main.js" defer></script>
 </head>
-<body>
-<div class="v-page">
-
-  <!-- ШАПКА: закреплена всегда, меню, телефон и кнопка заказа -->
-  <header class="hdr" id="hdr">
-    <div class="hdr__in">
-      <a class="hdr__logo" href="#top"><i aria-hidden="true"></i><span>{{компания}}</span></a>
-      <nav class="hdr__nav" id="hdrNav" aria-label="Разделы сайта">
-        <a href="#katalog">Каталог</a>
-        <a href="#kalkulyator">Калькулятор</a>
-        <a href="#etapy">Этапы</a>
-        <a href="#cena">Состав цены</a>
-        <a href="#raschet">Контакты</a>
-        <a class="hdr__navtel" href="tel:{{телефон}}">{{телефон}}</a>
-      </nav>
-      <a class="hdr__tel" href="tel:{{телефон}}" aria-label="Позвонить {{телефон}}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg><span>{{телефон}}</span></a>
-      <a class="v-btn hdr__cta" href="#kalkulyator">Рассчитать стоимость</a>
-      <button class="hdr__burger" id="hdrBurger" type="button" aria-expanded="false" aria-controls="hdrNav" aria-label="Меню"><i></i><i></i><i></i></button>
-    </div>
-  </header>
-
-  <!-- фолио: линия этапов на полях -->
-  <nav class="folio" id="folio" aria-label="Оглавление по этапам">
-    <span class="folio__line"></span>
-    <span class="folio__fill" id="folioFill"></span>
-    <span class="folio__dot" style="top:0%"><span><b>01</b>Основание</span></span>
-    <span class="folio__dot" style="top:25%"><span><b>02</b>Каркас</span></span>
-    <span class="folio__dot" style="top:50%"><span><b>03</b>Кровля</span></span>
-    <span class="folio__dot" style="top:75%"><span><b>04</b>Отделка</span></span>
-    <span class="folio__dot" style="top:100%"><span><b>05</b>Доставка</span></span>
-    <a class="folio__cta" href="#kalkulyator">Рассчитать стоимость</a>
-  </nav>
-  <div class="folio-m" id="folioM">
-    <span id="folioMText" aria-hidden="true"><b>01</b> · Основание</span>
-    <a href="#kalkulyator">Рассчитать стоимость</a>
-    <span class="folio-m__bar" id="folioMBar" aria-hidden="true"></span>
+<body id="top">
+<a class="skip" href="#main">К содержимому</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>Бытовка&nbsp;Строй</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button>
+    <nav id="site-nav" class="site-nav" aria-label="Основная навигация">
+      <ul>
+        <li><a href="#top">Главная</a></li>
+        <li><a href="#modeli">Модели</a></li>
+        <li><a href="#uslugi">Услуги</a></li>
+        <li><a href="#primery">Примеры</a></li>
+        <li><a href="#o-kompanii">О компании</a></li>
+        <li><a href="#kontakty" class="btn btn-small">Рассчитать</a></li>
+      </ul>
+    </nav>
   </div>
-
-  <main id="top">
-
-    <!-- ТИТУЛЬНЫЙ ЛИСТ: закреплённая сцена «стройка наоборот». Четыре кадра одного ракурса стопкой, сверху вниз: бытовка, каркас, основание, участок.
-         При прокрутке верхние кадры гаснут по очереди. Прозрачность ведёт свой JS от --v-p акта (внизу страницы) -->
-    <section class="cover" id="cover" data-v-act="pin" data-v-span="3.6" aria-label="Титульный лист">
-      <div data-v-stage>
-        <div class="cover__stack">
-          <img class="cover__img" src="assets/stage-plot.webp" alt="" width="1920" height="1067" decoding="async">
-          <img class="cover__img" src="assets/stage-foundation.webp" alt="" width="1920" height="1067" decoding="async">
-          <img class="cover__img" src="assets/stage-frame.webp" alt="" width="1920" height="1067" decoding="async">
-          <img class="cover__img" src="assets/cover.webp" alt="Готовая деревянная бытовка на бетонных блоках на участке в утренней дымке. При прокрутке тот же участок показан каркасом, основанием и пустой площадкой" width="1920" height="1067" fetchpriority="high" decoding="async">
+</header>
+<main id="main">
+<section class="hero">
+  <div class="container">
+    <p class="tag">Деревянные бытовки под ключ</p>
+    <h1>Строим деревянные бытовки – привезём и поставим сами</h1>
+    <p class="lead">Собираем бытовки для стройки, дачи и охраны на своей базе, доставляем манипулятором и устанавливаем на вашем участке.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#kontakty">Рассчитать стоимость</a>
+      <a class="btn btn-outline" href="#modeli">Смотреть модели</a>
+    </div>
+  </div>
+</section>
+<section class="section" aria-labelledby="facts">
+  <div class="container">
+    <h2 id="facts" class="visually-hidden">Чем мы отличаемся</h2>
+    <div class="stats">
+      <div class="stat"><strong>Под ключ</strong>доставка и установка</div>
+      <div class="stat"><strong>Своя база</strong>строим без посредников</div>
+      <div class="stat"><strong>Утеплённые</strong>для круглого года</div>
+      <div class="stat"><strong>Под размер</strong>и вашу планировку</div>
+    </div>
+  </div>
+</section>
+<section id="dlya-chego" class="section" aria-labelledby="categories">
+  <div class="container">
+    <h2 id="categories">Для чего собираем</h2>
+    <div class="grid grid-3">
+      <article class="card"><h3>Бытовка для бригады</h3><p>Раздевалка, место для обеда и хранения инструмента на стройплощадке.</p><a href="#modeli">Подробнее</a></article>
+      <article class="card"><h3>Дачный хозблок</h3><p>Кладовая под садовый инвентарь и мастерская на участке.</p><a href="#modeli">Подробнее</a></article>
+      <article class="card"><h3>Пост охраны</h3><p>Тёплая будка для сторожа с местом под обогреватель и стол.</p><a href="#modeli">Подробнее</a></article>
+      <article class="card"><h3>Жильё для рабочих</h3><p>Спальные места, электрика и утепление под сезонное проживание.</p><a href="#komplektacii">Подробнее</a></article>
+      <article class="card"><h3>Под ваш размер</h3><p>Нестандартная длина, окна и перегородки по вашему эскизу.</p><a href="#opcii">Подробнее</a></article>
+    </div>
+  </div>
+</section>
+<section class="section section-dark" aria-labelledby="why">
+  <div class="container">
+    <h2 id="why">Почему выбирают нас</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>Всё делаем сами</h3><p class="muted">Строим, везём и ставим одной бригадой: не нужно искать отдельно плотников и манипулятор.</p></div>
+      <div class="card"><h3>Дерево, а не металл</h3><p class="muted">Брус и вагонка: бытовка не промерзает зимой и не превращается в духовку летом.</p></div>
+      <div class="card"><h3>Цена до заказа</h3><p class="muted">Стоимость называем после расчёта и фиксируем в договоре, без доплат на месте.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="modeli" aria-labelledby="h-modeli">
+  <div class="container">
+    <h2 id="h-modeli">Типовые размеры</h2>
+    <div class="grid grid-3">
+      <article class="card"><h3>Хозблок 3×2,3 м</h3><p>Для дачи и мелкой стройки: инструмент, инвентарь, переодевание.</p><ul><li>Одно помещение</li><li>Дверь и одно окно</li></ul></article>
+      <article class="card"><h3>Бытовка 4×2,3 м</h3><p>Для прораба и небольшой бригады: стол, лавки, вешалки.</p><ul><li>Тамбур по желанию</li><li>Два окна</li></ul></article>
+      <article class="card"><h3>Бытовка 6×2,3 м</h3><p>Для бригады: раздевалка и комната отдыха с перегородкой.</p><ul><li>Две зоны</li><li>Электрика и розетки</li></ul></article>
+    </div>
+  </div>
+</section>
+<section class="section section-dark" id="komplektacii" aria-labelledby="h-kompl">
+  <div class="container">
+    <h2 id="h-kompl">Комплектации</h2>
+    <div class="table-wrap">
+      <table>
+        <caption class="visually-hidden">Сравнение комплектаций</caption>
+        <thead><tr><th scope="col">Комплектация</th><th scope="col">Стены и пол</th><th scope="col">Для чего</th></tr></thead>
+        <tbody>
+          <tr><td>Лето</td><td>Брус, вагонка, без утепления</td><td>Хранение, тёплый сезон</td></tr>
+          <tr><td>Утеплённая</td><td>Минеральная вата в стенах и полу</td><td>Бригада, охрана</td></tr>
+          <tr><td>Зимняя</td><td>Утолщённое утепление, двойной пол</td><td>Проживание, круглый год</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 style="margin-top:24px">Электрика</h3>
+    <p class="muted">Освещение и розетки ставим по желанию, подключение к вашему вводу обсуждаем при заказе.</p>
+  </div>
+</section>
+<section class="section" id="opcii" aria-labelledby="h-opcii">
+  <div class="container">
+    <h2 id="h-opcii">Дополнительные опции</h2>
+    <div class="grid grid-3">
+      <article class="card"><h3>Тамбур и навес</h3><p>Защита входа от снега и дождя, место для обуви.</p></article>
+      <article class="card"><h3>Перегородки и мебель</h3><p>Разделим на комнаты, поставим лавки, стол, вешалки и полки.</p></article>
+      <article class="card"><h3>Кровати и обогрев</h3><p>Спальные места и электрические обогреватели для проживания.</p></article>
+    </div>
+    <p style="margin-top:24px"><a class="btn" href="#kontakty">Рассчитать по моим размерам</a></p>
+  </div>
+</section>
+<section id="uslugi" class="section" aria-labelledby="h-services">
+  <div class="container">
+    <h2 id="h-services">Что мы делаем</h2>
+    <div class="grid grid-2">
+      <article class="card"><h3>Изготовление</h3><p>Строим бытовку на своей базе из бруса и вагонки, с утеплением по выбранной комплектации.</p></article>
+      <article class="card"><h3>Доставка манипулятором</h3><p>Привозим готовую бытовку на ваш участок, согласуем время подъезда заранее.</p></article>
+      <article class="card"><h3>Установка</h3><p>Выставляем бытовку по уровню на опорах и проверяем, что двери и окна закрываются.</p></article>
+      <article class="card"><h3>Переезд бытовки</h3><p>Если стройка закончилась, перевезём бытовку на новое место.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section section-dark" aria-labelledby="h-process">
+  <div class="container">
+    <h2 id="h-process">Как мы работаем</h2>
+    <ol class="steps">
+      <li><h3>Заявка</h3><p>Вы описываете, для чего нужна бытовка и какого она размера.</p></li>
+      <li><h3>Расчёт</h3><p>За 1 рабочий день называем стоимость и срок изготовления.</p></li>
+      <li><h3>Договор</h3><p>Фиксируем размер, комплектацию, цену и дату доставки.</p></li>
+      <li><h3>Сборка, доставка и установка</h3><p>Строим, привозим и ставим сами, показываем фото на каждом этапе.</p></li>
+    </ol>
+  </div>
+</section>
+<section class="section" aria-labelledby="h-geo">
+  <div class="container">
+    <h2 id="h-geo">Доставка</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>Куда везём</h3><p>По городу и области, дальние адреса считаем отдельно.</p></div>
+      <div class="card"><h3>Подъезд</h3><p>Нужна ровная площадка и проезд для манипулятора, уточним по фото участка.</p></div>
+      <div class="card"><h3>Сроки</h3><p>Срок изготовления называем в расчёте, он зависит от размера и комплектации.</p></div>
+    </div>
+    <p style="margin-top:24px"><a class="btn" href="#kontakty">Обсудить заказ</a></p>
+  </div>
+</section>
+<section id="primery" class="section" aria-labelledby="h-projects">
+  <div class="container">
+    <h2 id="h-projects">С чем к нам обращаются</h2>
+    <div class="grid grid-2">
+      <article class="card"><span class="tag">Стройка</span><h3>Бытовка для бригады</h3><p>Раздевалка и комната отдыха на площадке коттеджного строительства.</p><ul><li>Утеплённая комплектация</li><li>Электрика и обогреватель</li></ul></article>
+      <article class="card"><span class="tag">Дача</span><h3>Хозблок на участке</h3><p>Кладовая под инвентарь и мастерская для садовых работ.</p><ul><li>Комплектация «Лето»</li><li>Размер 3×2,3 м</li></ul></article>
+      <article class="card"><span class="tag">Охрана</span><h3>Пост охраны</h3><p>Тёплая будка у въезда на территорию, стол и место под обогрев.</p><ul><li>Утеплённая комплектация</li><li>Большое окно на въезд</li></ul></article>
+      <article class="card"><span class="tag">Проживание</span><h3>Жильё для рабочих</h3><p>Спальные места, электрика и утепление под зиму.</p><ul><li>Зимняя комплектация</li><li>Перегородка и кровати</li></ul></article>
+    </div>
+  </div>
+</section>
+<section id="o-kompanii" class="section" aria-labelledby="h-history">
+  <div class="container">
+    <h2 id="h-history">Из чего строим</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>Брус и вагонка</h3><p>Каркас из бруса, обшивка вагонкой, пол из доски.</p></div>
+      <div class="card"><h3>Утепление</h3><p>Минеральная вата в стенах и полу, толщина зависит от комплектации.</p></div>
+      <div class="card"><h3>Защита дерева</h3><p>Обрабатываем древесину антисептиком и красим по желанию заказчика.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section section-dark" aria-labelledby="h-values">
+  <div class="container">
+    <h2 id="h-values">Принципы работы</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>Один исполнитель</h3><p class="muted">Строим, возим и ставим сами, поэтому отвечаем за результат целиком.</p></div>
+      <div class="card"><h3>Понятная цена</h3><p class="muted">Стоимость и срок фиксируем в договоре до начала работ.</p></div>
+      <div class="card"><h3>Фото на каждом этапе</h3><p class="muted">Показываем сборку и установку, вы видите, за что платите.</p></div>
+    </div>
+  </div>
+</section>
+<section id="kontakty" class="section" aria-labelledby="h-form">
+  <div class="container grid grid-2">
+    <div>
+      <h2 id="h-form">Рассчитать стоимость</h2>
+      <form class="form" data-quote-form action="#" method="post" aria-describedby="demo-note">
+        <div class="field"><label for="f-name">Ваше имя</label><input id="f-name" name="name" type="text" autocomplete="name" required><span class="field-error" aria-live="polite"></span></div>
+        <div class="field"><label for="f-company">Город или посёлок установки</label><input id="f-company" name="company" type="text" required><span class="field-error" aria-live="polite"></span></div>
+        <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 900 123-45-67" required><span class="field-error" aria-live="polite"></span></div>
+        <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required><span class="field-error" aria-live="polite"></span></div>
+        <div class="field"><label for="f-object">Нужный размер (необязательно)</label><input id="f-object" name="object" type="text" placeholder="Например: 6×2,3 м"><span class="field-error" aria-live="polite"></span></div>
+        <div class="field"><label for="f-order">Для чего нужна бытовка</label><textarea id="f-order" name="order" rows="5" placeholder="Например: бытовка для бригады, утеплённая, с электрикой, на участке под Новоградом" required></textarea><span class="field-error" aria-live="polite"></span></div>
+        <div class="field">
+          <div class="field-check"><input id="f-consent" name="consent" type="checkbox"><label for="f-consent">Согласен на обработку персональных данных</label></div>
+          <span class="field-error" aria-live="polite"></span>
         </div>
-        <div class="cover__scrim" aria-hidden="true"></div>
-        <div class="v-wrap title">
-          <div class="title__body" data-v-cue="0 1 0 0">
-            <span class="v-label">Бытовки · хозблоки · туалеты · качели</span>
-            <h1 class="v-display">Строим деревянные бытовки в {{город}} – привезём и поставим сами</h1>
-            <p class="v-lede">Бытовки, хозблоки, туалеты и качели из сухого бруса. <b>Делаем под ваш участок, привозим манипулятором и ставим на основание.</b> Цену видите в калькуляторе до звонка.</p>
-            <div class="title__cta">
-              <p class="title__price">Бытовка от <b>{{цена}} ₽</b>, хозблок от <b>{{цена хозблока}} ₽</b>. <span>Точная сумма в калькуляторе и в договоре, ответ в течение рабочего дня.</span></p>
-            </div>
-          </div>
-          <div class="title__foot">
-            <span><b>0.1</b>Один участок, четыре состояния · {{город}}</span>
-            <p class="cover__state" id="coverState" aria-live="polite">
-              <span class="is-on"><i>Этап</i><b>05</b>Готово к установке</span>
-              <span><i>Этап</i><b>02</b>Каркас</span>
-              <span><i>Этап</i><b>01</b>Основание</span>
-              <span><i>Этап</i><b>00</b>Ваш участок</span>
-            </p>
-          </div>
-        </div>
-        <ol class="cover__scale" id="coverScale" aria-hidden="true"><li class="is-on"></li><li></li><li></li><li></li></ol>
+        <button class="btn" type="submit">Отправить заявку</button>
+        <p id="demo-note" class="muted"><small>Демо: данные никуда не отправляются.</small></p>
+      </form>
+      <div id="quote-success" class="form-success" role="status" tabindex="-1" hidden>
+        <h3>Заявка принята (демо)</h3>
+        <p>В реальном проекте менеджер связался бы с вами в течение рабочего дня.</p>
       </div>
-    </section>
-
-    <!-- КАТАЛОГ: четыре изделия, шахматка (не сетка одинаковых карточек) -->
-    <section class="v-section" data-v-act="flow" id="katalog" aria-label="Каталог">
-      <div class="v-wrap">
-        <div class="cat__head" data-v-in data-v-stagger="70">
-          <span class="v-label">Каталог</span>
-          <h2 class="v-display">Четыре изделия из дерева</h2>
-          <p>Размеры и комплектацию подбираете в калькуляторе ниже. Фильтров нет: изделий четыре, и каждое видно целиком.</p>
-        </div>
-        <ul class="cat">
-          <li class="cat__item cat__item--lead" data-v-in data-v-stagger="60">
-            <figure><img src="assets/cat-bytovka.webp" alt="Деревянная бытовка с односкатной крышей, дверью и окном" width="1200" height="900" loading="lazy" decoding="async"></figure>
-            <div class="cat__copy">
-              <span class="v-label">01 · Бытовка</span>
-              <h3>Для стройки, дачи и жилья на сезон</h3>
-              <dl><div><dt>Размеры</dt><dd>{{размеры бытовок}}</dd></div><div><dt>Материал</dt><dd>{{материал}}</dd></div><div><dt>Цена</dt><dd>от <b>{{цена}} ₽</b></dd></div></dl>
-              <a class="cat__link" href="#kalkulyator" data-type="bytovka">Рассчитать стоимость</a>
-            </div>
-          </li>
-          <li class="cat__item" data-v-in data-v-stagger="60">
-            <figure><img src="assets/cat-hozblok.webp" alt="Деревянный хозблок с двустворчатой дверью" width="1200" height="900" loading="lazy" decoding="async"></figure>
-            <div class="cat__copy">
-              <span class="v-label">02 · Хозблок</span>
-              <h3>Инструмент, дрова, инвентарь</h3>
-              <dl><div><dt>Размеры</dt><dd>{{размеры хозблоков}}</dd></div><div><dt>Цена</dt><dd>от <b>{{цена хозблока}} ₽</b></dd></div></dl>
-              <a class="cat__link" href="#kalkulyator" data-type="hozblok">Рассчитать стоимость</a>
-            </div>
-          </li>
-          <li class="cat__item" data-v-in data-v-stagger="60">
-            <figure><img src="assets/cat-tualet.webp" alt="Дачный деревянный туалет с односкатной крышей" width="1200" height="900" loading="lazy" decoding="async"></figure>
-            <div class="cat__copy">
-              <span class="v-label">03 · Туалет</span>
-              <h3>Дачный туалет без лишнего</h3>
-              <dl><div><dt>Размеры</dt><dd>{{размеры туалетов}}</dd></div><div><dt>Цена</dt><dd>от <b>{{цена туалета}} ₽</b></dd></div></dl>
-              <a class="cat__link" href="#kalkulyator" data-type="tualet">Рассчитать стоимость</a>
-            </div>
-          </li>
-          <li class="cat__item cat__item--lead cat__item--flip" data-v-in data-v-stagger="60">
-            <figure><img src="assets/cat-kacheli.webp" alt="Деревянные садовые качели на раме из бруса" width="1200" height="900" loading="lazy" decoding="async"></figure>
-            <div class="cat__copy">
-              <span class="v-label">04 · Качели</span>
-              <h3>Садовые качели на раме из бруса</h3>
-              <dl><div><dt>Размеры</dt><dd>{{размеры качелей}}</dd></div><div><dt>Цена</dt><dd>от <b>{{цена качелей}} ₽</b></dd></div></dl>
-              <a class="cat__link" href="#kalkulyator" data-type="kacheli">Рассчитать стоимость</a>
-            </div>
-          </li>
-        </ul>
+    </div>
+    <aside aria-labelledby="h-contacts">
+      <h2 id="h-contacts">Как с нами связаться</h2>
+      <div class="card">
+        <h3>Телефон</h3>
+        <p><a href="tel:+78005550142">8 800 555-01-42</a></p>
+        <h3>E-mail</h3>
+        <p><a href="mailto:zakaz@bytovki.example">zakaz@bytovki.example</a></p>
+        <h3>База</h3>
+        <p>г. Новоград, ул. Строителей, 15 (вымышленный адрес)<br>Пн–Пт 8:00–18:00</p>
       </div>
-    </section>
-
-    <!-- КАЛЬКУЛЯТОР: единственный действующий блок. Цены в объекте CALC в конце страницы -->
-    <section class="v-section calc-sec" data-v-act="flow" id="kalkulyator" aria-label="Калькулятор стоимости">
-      <div class="v-wrap">
-        <div class="cat__head" data-v-in data-v-stagger="70">
-          <span class="v-label">Калькулятор</span>
-          <h2 class="v-display">Цена за минуту</h2>
-          <p>Выберите изделие, размер и комплектацию. Итог пересчитывается сразу, без звонка и регистрации.</p>
-        </div>
-        <form class="calc" id="calc" data-v-in data-v-stagger="70" onsubmit="return false">
-          <div class="calc__form">
-            <fieldset><legend><b>1</b>Что нужно</legend>
-              <div class="seg" id="cType">
-                <label><input type="radio" name="type" value="bytovka" checked><span>Бытовка</span></label>
-                <label><input type="radio" name="type" value="hozblok"><span>Хозблок</span></label>
-                <label><input type="radio" name="type" value="tualet"><span>Туалет</span></label>
-                <label><input type="radio" name="type" value="kacheli"><span>Качели</span></label>
-              </div>
-            </fieldset>
-            <fieldset><legend><b>2</b>Размер</legend>
-              <div class="seg" id="cSize"></div>
-            </fieldset>
-            <fieldset id="fWall"><legend><b>3</b>Утепление стен и пола</legend>
-              <div class="seg" id="cWall"></div>
-            </fieldset>
-            <fieldset id="fRoof"><legend><b>4</b>Кровля</legend>
-              <div class="seg" id="cRoof"></div>
-            </fieldset>
-            <fieldset id="fOpt"><legend><b>5</b>Окна, двери и опции</legend>
-              <div class="chk" id="cOpt"></div>
-            </fieldset>
-          </div>
-          <aside class="calc__out" aria-live="polite">
-            <span class="v-label">Ориентировочная стоимость</span>
-            <p class="calc__sum" id="cSum">от <b>–</b></p>
-            <ul class="calc__rows" id="cRows"></ul>
-            <p class="calc__meta">Срок изготовления: {{срок-изготовления}}. Доставка: {{регионы-доставки}}.</p>
-            <a class="v-btn" id="cGo" href="{{ссылка-записи}}">Заказать расчёт</a>
-            <p class="calc__alt">Или позвоните: <a href="tel:{{телефон}}">{{телефон}}</a></p>
-            <p class="calc__demo" id="cDemo">Демо-расчёт: цены условные, в сайт заказчика встанет его прайс. Оплаты на сайте нет, заказ уходит заявкой.</p>
-          </aside>
-        </form>
-      </div>
-    </section>
-
-    <!-- ОГЛАВЛЕНИЕ: пять этапов изготовления -->
-    <section class="toc" data-v-act="flow" id="etapy" aria-label="Оглавление">
-      <div class="v-wrap" data-v-in data-v-stagger="60">
-        <div class="toc__head">
-          <span class="v-label">Как делаем</span>
-          <p>Пять этапов от основания до установки на вашем участке. Каждый этап – что делаем, из чего и что получаете.</p>
-        </div>
-        <ol>
-          <li><a href="#ch1"><img src="assets/foundation-t.webp" alt="" width="480" height="320" loading="lazy" decoding="async"><span><b>01</b>Основание</span></a></li>
-          <li><a href="#ch2"><img src="assets/frame-t.webp" alt="" width="480" height="320" loading="lazy" decoding="async"><span><b>02</b>Каркас</span></a></li>
-          <li><a href="#ch3"><img src="assets/roof-t.webp" alt="" width="480" height="320" loading="lazy" decoding="async"><span><b>03</b>Кровля</span></a></li>
-          <li><a href="#ch4"><img src="assets/interior-t.webp" alt="" width="480" height="320" loading="lazy" decoding="async"><span><b>04</b>Отделка</span></a></li>
-          <li><a href="#ch5"><img src="assets/house-t.webp" alt="" width="480" height="320" loading="lazy" decoding="async"><span><b>05</b>Доставка</span></a></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ИНТЕРТИТР 1 -->
-    <section class="inter" data-v-act="flow" data-chapter="1" id="ch1" aria-label="Глава 1. Основание">
-      <div class="v-wrap inter__grid" data-v-in data-v-stagger="90">
-        <div class="inter__num" aria-hidden="true">0<em>1</em></div>
-        <div class="inter__text">
-          <span class="v-label">Глава первая</span>
-          <h2 class="v-display">Основание</h2>
-          <p>Рама пола из бруса и обработка древесины. От ровного основания зависит, закроются ли дверь и окно через пять лет так же легко, как в день установки.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ГЛАВА 1 · ОСНОВАНИЕ -->
-    <section class="v-section" data-v-act="flow" aria-label="Основание: что делаем">
-      <div class="v-wrap spread">
-        <figure class="spread__fig" data-v-reveal="left" data-v-reveal-at="0.1 0.42">
-          <div class="fig"><div data-v-parallax="0.4"><img src="assets/foundation.webp" alt="Бетонные блоки и брусовая рама основания будущей бытовки" width="1600" height="889" loading="lazy" decoding="async"></div></div>
-          <figcaption><b>1.1</b><span>Рама из бруса на бетонных блоках. Бытовку ставят на такое основание на вашем участке.</span></figcaption>
-        </figure>
-        <div class="spread__copy" data-v-in data-v-stagger="70">
-          <span class="v-label">Этап 1 из 5</span>
-          <h2 class="v-display">Рама пола и основание под участок</h2>
-          <p>Бытовке не нужен капитальный фундамент: достаточно <b>ровных бетонных блоков или винтовых свай</b>. Подскажем, что подойдёт вашему грунту, и скажем честно, если площадка требует подготовки.</p>
-          <dl class="facts">
-            <div><dt>Что в этапе</dt><dd>Нижняя обвязка и лаги из бруса, обработка антисептиком, гидроизоляция под основание.</dd></div>
-            <div><dt>Основание на участке</dt><dd>Блоки или сваи: {{что входит в цену основания}}. Если ставите сами, пришлём схему.</dd></div>
-            <div><dt>Срок</dt><dd>Срок изготовления записан в договоре: {{срок-изготовления}}.</dd></div>
-          </dl>
-        </div>
-      </div>
-    </section>
-
-    <!-- ИНТЕРТИТР 2 -->
-    <section class="inter inter--wood" data-v-act="flow" data-chapter="2" id="ch2" aria-label="Глава 2. Каркас">
-      <div class="v-wrap inter__grid" data-v-in data-v-stagger="90">
-        <div class="inter__num" aria-hidden="true">0<em>2</em></div>
-        <div class="inter__text">
-          <span class="v-label">Глава вторая</span>
-          <h2 class="v-display">Каркас</h2>
-          <p>Стойки, обвязка и обшивка. Здесь решается главное: из какого дерева сделана бытовка и сколько она проживёт.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ГЛАВА 2 · КАРКАС: сцена держится, три факта -->
-    <section data-v-act="pin" data-v-span="2.8" aria-label="Каркас: три условия">
-      <div data-v-stage>
-        <div class="frame">
-          <div class="frame__copy">
-            <span class="v-label frame__head" data-v-cue="0 1 0 0" data-v-rise="0">Этап 2 из 5 · Каркас</span>
-            <div class="frame__cue" data-v-cue="0 0.34 0 0.05">
-              <span class="v-label">Материал</span>
-              <h3>Брус и доска камерной сушки</h3>
-              <p>Каркас и обшивка из сухой древесины: {{материал}}. <b>Порода и сечение названы в комплектации</b>, а не «по наличию».</p>
-            </div>
-            <div class="frame__cue" data-v-cue="0.32 0.66 0.05 0.05">
-              <span class="v-label">Состав цены</span>
-              <h3>Что входит и что за доплату – списком</h3>
-              <p>Базовая комплектация и опции разложены по строкам. <b>Всё, что не входит, названо заранее</b>, чтобы итог не вырос после замера.</p>
-            </div>
-            <div class="frame__cue" data-v-cue="0.64 1 0.05 0">
-              <span class="v-label">Гарантия</span>
-              <h3>Гарантия записана в договоре</h3>
-              <p>Срок гарантии на каркас: <b>{{гарантия}}</b>. Это условие сделки, а не обещание в мессенджере.</p>
-            </div>
-            <div class="frame__steps" aria-hidden="true"><i></i><i></i><i></i></div>
-          </div>
-          <figure class="frame__fig">
-            <div data-v-parallax="0.5"><img src="assets/frame.webp" alt="Каркас бытовки изнутри: стойки и стропила, дневной свет сквозь конструкцию" width="1600" height="889" loading="lazy" decoding="async"></div>
-            <figcaption>2.1 · Каркас до обшивки</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ИНТЕРТИТР 3 -->
-    <section class="inter" data-v-act="flow" data-chapter="3" id="ch3" aria-label="Глава 3. Кровля">
-      <div class="v-wrap inter__grid" data-v-in data-v-stagger="90">
-        <div class="inter__num" aria-hidden="true">0<em>3</em></div>
-        <div class="inter__text">
-          <span class="v-label">Глава третья</span>
-          <h2 class="v-display">Кровля</h2>
-          <p>Стропила, обрешётка, покрытие. После этого этапа бытовка закрыта от дождя, и внутри можно работать в любую погоду.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ГЛАВА 3 · КРОВЛЯ -->
-    <section class="v-section" data-v-act="flow" aria-label="Кровля: что делаем">
-      <div class="v-wrap spread spread--flip">
-        <figure class="spread__fig" data-v-reveal="right" data-v-reveal-at="0.1 0.42">
-          <div class="fig"><div data-v-parallax="0.4"><img src="assets/roof.webp" alt="Стропила, обрешётка и металлическое покрытие односкатной кровли" width="1600" height="889" loading="lazy" decoding="async"></div></div>
-          <figcaption><b>3.1</b><span>Односкатная кровля: часть ската уже закрыта металлом, часть ждёт покрытие.</span></figcaption>
-        </figure>
-        <div class="spread__copy" data-v-in data-v-stagger="70">
-          <span class="v-label">Этап 3 из 5</span>
-          <h2 class="v-display">Крыша, которая не течёт и не гремит</h2>
-          <p>Стропила из того же сухого бруса, что и каркас. Покрытие на выбор в калькуляторе: <b>профнастил или металлочерепица</b>. Под покрытием плёнка и вентзазор, чтобы не копился конденсат.</p>
-          <dl class="facts">
-            <div><dt>Что в этапе</dt><dd>Стропила, обрешётка, плёнка, покрытие, карнизные планки, примыкания.</dd></div>
-            <div><dt>Выбор</dt><dd>Профнастил или металлочерепица, цвет из каталога производителя покрытия.</dd></div>
-            <div><dt>Проверка</dt><dd>Осматриваем примыкания и уклон до отправки: фото ската приложим к заказу.</dd></div>
-          </dl>
-        </div>
-      </div>
-    </section>
-
-    <!-- ИНТЕРТИТР 4 -->
-    <section class="inter inter--dark" data-v-act="flow" data-chapter="4" id="ch4" aria-label="Глава 4. Отделка">
-      <div class="v-wrap inter__grid" data-v-in data-v-stagger="90">
-        <div class="inter__num" aria-hidden="true">0<em>4</em></div>
-        <div class="inter__text">
-          <span class="v-label">Глава четвёртая</span>
-          <h2 class="v-display">Отделка</h2>
-          <p>Утепление, внутренняя обшивка, окна и двери. Здесь бытовка превращается из сарая в помещение, где можно переждать зиму.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ГЛАВА 4 · ОТДЕЛКА (инвертирована) -->
-    <section class="v-section chapter--dark" data-v-act="flow" aria-label="Отделка: что делаем">
-      <div class="v-wrap spread">
-        <figure class="spread__fig" data-v-reveal="left" data-v-reveal-at="0.1 0.42">
-          <div class="fig"><div data-v-parallax="0.4"><img src="assets/interior.webp" alt="Внутри бытовки: одна стена обшита вагонкой, на другой видно утеплитель между стойками" width="1600" height="889" loading="lazy" decoding="async"></div></div>
-          <figcaption><b>4.1</b><span>Вагонка на одной стене, утеплитель на другой. Так видно, что именно лежит под обшивкой.</span></figcaption>
-        </figure>
-        <div class="spread__copy" data-v-in data-v-stagger="70">
-          <span class="v-label">Этап 4 из 5</span>
-          <h2 class="v-display">Тёплая бытовка или холодная – решаете вы</h2>
-          <p>В калькуляторе три варианта: <b>без утепления, 50 мм и 100 мм</b>. Утеплитель, пароизоляция и вагонка названы в комплектации. Хотите окно побольше или тамбур – это опция, которая видна в итоге отдельной строкой.</p>
-          <dl class="facts">
-            <div><dt>Что в этапе</dt><dd>Утепление пола, стен и потолка, пароизоляция, обшивка вагонкой, окна и дверь, по желанию электрика.</dd></div>
-            <div><dt>Опции</dt><dd>Дополнительное окно, тамбур, электрика, мебель: каждая отдельной строкой в калькуляторе.</dd></div>
-            <div><dt>Проверка</dt><dd>Перед отправкой: двери и окна закрываются, швы закрыты, замки работают.</dd></div>
-          </dl>
-        </div>
-      </div>
-    </section>
-
-    <!-- ИНТЕРТИТР 5 -->
-    <section class="inter" data-v-act="flow" data-chapter="5" id="ch5" aria-label="Глава 5. Доставка">
-      <div class="v-wrap inter__grid" data-v-in data-v-stagger="90">
-        <div class="inter__num" aria-hidden="true">0<em>5</em></div>
-        <div class="inter__text">
-          <span class="v-label">Глава пятая</span>
-          <h2 class="v-display">Доставка и установка</h2>
-          <p>Привезём на манипуляторе, поставим на основание, проверим дверь и окна. Условия доставки заранее в договоре, а не «по факту».</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ГЛАВА 5 · ДОСТАВКА + выполненные работы -->
-    <section class="v-section" data-v-act="flow" aria-label="Доставка и установка: что получаете">
-      <div class="v-wrap">
-        <div class="spread spread--flip">
-          <figure class="spread__fig" data-v-reveal="right" data-v-reveal-at="0.1 0.42">
-            <!-- заменить на фото реальной установки -->
-            <div class="fig"><div data-v-parallax="0.4"><img src="assets/house.webp" alt="Бытовку опускают манипулятором на подготовленные бетонные блоки" width="1600" height="889" loading="lazy" decoding="async"></div></div>
-            <figcaption><b>5.1</b><span>Установка манипулятором на готовое основание. Фото иллюстративное.</span></figcaption>
-          </figure>
-          <div class="spread__copy" data-v-in data-v-stagger="70">
-            <span class="v-label">Этап 5 из 5</span>
-            <h2 class="v-display">Приехала, встала, закрывается</h2>
-            <p>Привозим готовую бытовку, ставим на основание и <b>вместе проверяем дверь, окна и замки</b>. Замечания записываем и устраняем. Доставка по зонам: {{регионы-доставки}}.</p>
-            <dl class="facts">
-              <div><dt>Доставка</dt><dd>Стоимость по зонам и условия подъезда названы до заказа: {{регионы-доставки}}.</dd></div>
-              <div><dt>Установка</dt><dd>Манипулятором на блоки или сваи. Что нужно от вас: подъезд и ровная площадка.</dd></div>
-              <div><dt>Документы</dt><dd>Договор, комплектация, гарантийный лист, КП в PDF: <a href="{{файл-КП}}" rel="noopener">скачать</a>.</dd></div>
-            </dl>
-          </div>
-        </div>
-
-        <!-- Выполненные работы: слоты под фото реальных объектов. Вместо .fig--slot вставить
-             <div class="fig"><img src="{{объект 1 фото}}" alt="{{объект 1}}" width="1200" height="900" loading="lazy"></div>
-             Подпись {{объект 1}}: изделие и размер, район, месяц и год, срок по договору -->
-        <div class="built" data-v-in data-v-stagger="80">
-          <div class="built__head">
-            <span class="v-label">Выполненные работы</span>
-            <p>Настоящие объекты, без рендеров: изделие, размер, куда поставили и когда.</p>
-          </div>
-          <ul>
-            <li><figure><div class="fig fig--slot" role="img" aria-label="{{объект 1 фото}}"><span>{{объект 1 фото}}</span></div><figcaption><b>5.2</b><span>{{объект 1}}</span></figcaption></figure></li>
-            <li><figure><div class="fig fig--slot" role="img" aria-label="{{объект 2 фото}}"><span>{{объект 2 фото}}</span></div><figcaption><b>5.3</b><span>{{объект 2}}</span></figcaption></figure></li>
-            <li><figure><div class="fig fig--slot" role="img" aria-label="{{объект 3 фото}}"><span>{{объект 3 фото}}</span></div><figcaption><b>5.4</b><span>{{объект 3}}</span></figcaption></figure></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- БРИГАДА: слоты заполняются из данных заказчика -->
-    <section class="v-section" data-v-act="flow" id="brigada" aria-label="Бригада на объекте">
-      <div class="v-wrap spread spread--flip">
-        <figure class="spread__fig" data-v-reveal="right" data-v-reveal-at="0.1 0.42">
-          <div class="fig"><img src="assets/brigada.webp" alt="Бригада из трёх человек проверяет уровень основания у установленной бытовки" width="1400" height="788" loading="lazy" decoding="async"></div>
-          <figcaption><b>5.5</b><span>Бригада на объекте. Иллюстративный кадр.</span></figcaption>
-        </figure>
-        <div class="spread__copy" data-v-in data-v-stagger="70">
-          <span class="v-label">Бригада</span>
-          <h2 class="v-display">Знаете заранее, кто приедет</h2>
-          <p>Установку делает бригада, а не случайные люди. Кто старший, сколько человек и во сколько приедут – <b>скажем до выезда</b>.</p>
-          <dl class="facts">
-            <div><dt>Старший бригады</dt><dd>{{старший бригады}}</dd></div>
-            <div><dt>Сколько человек</dt><dd>{{сколько человек в бригаде}}</dd></div>
-            <div><dt>Во сколько приезжают</dt><dd>{{время приезда}}</dd></div>
-          </dl>
-        </div>
-      </div>
-    </section>
-
-    <!-- ЧТО ВХОДИТ В ЦЕНУ -->
-    <section class="v-section" data-v-act="flow" id="cena" aria-label="Что входит в цену">
-      <div class="v-wrap estimate">
-        <div>
-          <div class="estimate__intro" data-v-in data-v-stagger="70">
-            <span class="v-label">Состав цены</span>
-            <h2 class="v-display">Что входит в цену</h2>
-            <p>Цена в калькуляторе – это комплектация по строкам, а не «бытовка, одна штука». Что входит, что за доплату и что не входит вовсе, названо до договора.</p>
-          </div>
-          <ul class="lines" data-v-in data-v-stagger="50">
-            <li><span>01</span><h3>Размеры и комплектация</h3><p>Длина, ширина, высота, расположение окон и двери. Уточняем по телефону или в мессенджере до договора.</p></li>
-            <li><span>02</span><h3>Материалы с породой и сечением</h3><p>Брус, доска, вагонка, утеплитель, плёнка, кровля: {{материал}}. Порода, толщина и сечение названы в комплектации.</p></li>
-            <li><span>03</span><h3>Изготовление</h3><p>Основание, каркас, кровля, отделка по пяти этапам. Срок записан в договоре: {{срок-изготовления}}.</p></li>
-            <li><span>04</span><h3>Доставка и установка</h3><p>Манипулятором на готовое основание. Зоны и стоимость: {{регионы-доставки}}.</p></li>
-            <li><span>05</span><h3>Утепление и кровля на выбор</h3><p>Без утепления, 50 или 100 мм. Профнастил или металлочерепица. Разница видна в итоге калькулятора.</p></li>
-            <li><span>06</span><h3>Опции за доплату</h3><p>Дополнительное окно, тамбур, электрика, мебель: каждая отдельной строкой, включаете и отключаете сами.</p></li>
-            <li><span>07</span><h3>Что не входит</h3><p>Основание на вашем участке, подключение к сетям, вывоз упаковки. Не делаем: {{что не делаем}}. Чтобы сюрпризов не было ни у вас, ни у нас.</p></li>
-            <li><span>08</span><h3>Ориентир по изделиям</h3><p>Бытовка – от <b>{{цена}} ₽</b>, хозблок – от <b>{{цена хозблока}} ₽</b>, туалет – от <b>{{цена туалета}} ₽</b>, качели – от <b>{{цена качелей}} ₽</b>.</p></li>
-          </ul>
-        </div>
-        <figure class="estimate__fig" data-v-reveal="up" data-v-reveal-at="0.12 0.4">
-          <div class="fig"><img src="assets/material.webp" alt="Брус камерной сушки, вагонка и утеплитель крупным планом" width="1200" height="1600" loading="lazy" decoding="async"></div>
-          <figcaption>Брус, вагонка и утеплитель. Порода, сечение и толщина записаны в комплектации.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- КОЛОФОН: как заказать и контакты -->
-    <section class="colophon" data-v-act="flow" id="raschet" aria-label="Заказать расчёт">
-      <div class="v-wrap">
-        <div class="colophon__grid">
-          <div data-v-in data-v-stagger="70">
-            <span class="v-label">Заказ</span>
-            <h2 class="v-display">Рассчитаем и привезём</h2>
-            <p class="colophon__price">Бытовка от <b>{{цена}} ₽</b>, хозблок от <b>{{цена хозблока}} ₽</b>. <span>Точная сумма в калькуляторе и в договоре: по размеру, утеплению и опциям.</span></p>
-            <ul class="lines" aria-label="Как заказать">
-              <li><span>01</span><h3>Расчёт в калькуляторе</h3><p>Выбираете изделие, размер и комплектацию, видите итог. Отправляете заявку одной кнопкой.</p></li>
-              <li><span>02</span><h3>Уточняем детали</h3><p>Перезвоним в рабочий день: подъезд, площадка, цвета, срок.</p></li>
-              <li><span>03</span><h3>Договор</h3><p>Комплектация в приложении, срок изготовления и условия доставки записаны.</p></li>
-              <li><span>04</span><h3>Изготовление, доставка, установка</h3><p>Срок: {{срок-изготовления}}. Доставка: {{регионы-доставки}}.</p></li>
-            </ul>
-          </div>
-          <div class="colophon__meta" data-v-in data-v-stagger="80">
-            <!-- заполнить: в href телефон без пробелов, tel:+7XXXXXXXXXX; в тексте как удобно читать -->
-            <a class="colophon__tel" href="tel:{{телефон}}">{{телефон}}</a>
-            <span>{{адрес}}, {{город}} · {{часы}}</span>
-            <p class="colophon__msg"><span>Или напишите:</span> <a href="{{ссылка-записи}}" rel="noopener">мессенджер</a></p>
-            <p class="colophon__after">Нужен документ с ценами и комплектацией? <a href="{{файл-КП}}" rel="noopener">Скачать КП в PDF</a>.</p>
-          </div>
-        </div>
-        <footer class="colophon__foot">
-          <span>{{компания}} · деревянные бытовки и хозблоки · {{город}}</span>
-          <span>{{юрлицо}} · ИНН {{ИНН}} · <a href="{{ссылка-политика}}" rel="noopener">Политика обработки персональных данных</a></span>
-        </footer>
-      </div>
-    </section>
-
-  </main>
-</div>
-
-<script src="vibe.js"></script>
-<script>
-
-  // Калькулятор. CALC.demo = true: цены условные, показывается пометка «демо-расчёт».
-  // Для заказчика: подставить его прайс в CALC и поставить demo: false (пометка исчезнет).
-  var CALC = {
-    demo: true,
-    types: {
-      bytovka: { name: 'Бытовка', area: true,
-        sizes: [['3×2,3 м', 6.9, 78000], ['4×2,3 м', 9.2, 98000], ['6×2,3 м', 13.8, 142000]] },
-      hozblok: { name: 'Хозблок', area: true,
-        sizes: [['2×2 м', 4, 42000], ['3×2 м', 6, 58000], ['4×2 м', 8, 74000]] },
-      tualet:  { name: 'Туалет', area: false,
-        sizes: [['1×1 м', 1, 24000], ['1,2×1,5 м', 1.8, 31000]] },
-      kacheli: { name: 'Качели', area: false,
-        sizes: [['Двухместные', 1, 28000], ['Трёхместные', 1, 36000]] }
-    },
-    wall: [['Без утепления', 0], ['50 мм', 1900], ['100 мм', 3100]],   // за м² пола
-    roof: [['Профнастил', 0], ['Металлочерепица', 700]],               // за м² пола
-    opts: {
-      bytovka: [['Дополнительное окно', 7500], ['Тамбур', 18000], ['Электрика', 14000], ['Мебель: стол и лавки', 9000]],
-      hozblok: [['Дополнительное окно', 6000], ['Полки и стеллаж', 5500], ['Электрика', 12000]],
-      tualet:  [['Окно', 3500], ['Утепление стен', 6500]],
-      kacheli: [['Навес от дождя', 9500], ['Подушки в комплекте', 3800]]
-    }
-  };
-  (function () {
-    var form = document.getElementById('calc');
-    if (!form) return;
-    var $ = function (id) { return document.getElementById(id); };
-    var fmt = function (n) { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '); };
-    var uid = 0;
-    function seg(host, name, items, checked) {
-      host.innerHTML = items.map(function (it, i) {
-        uid++;
-        return '<label><input type="radio" name="' + name + '" value="' + i + '"' + (i === checked ? ' checked' : '') + '><span>' + it + '</span></label>';
-      }).join('');
-    }
-    function build() {
-      var t = CALC.types[form.type.value];
-      var prevSize = form.size ? +form.size.value || 0 : 0;
-      seg($('cSize'), 'size', t.sizes.map(function (s) { return s[0]; }), 0);
-      seg($('cWall'), 'wall', CALC.wall.map(function (w) { return w[0]; }), 0);
-      seg($('cRoof'), 'roof', CALC.roof.map(function (w) { return w[0]; }), 0);
-      $('cOpt').innerHTML = CALC.opts[form.type.value].map(function (o, i) {
-        return '<label><input type="checkbox" name="opt" value="' + i + '"><span>' + o[0] + '<small>+ ' + fmt(o[1]) + ' ₽</small></span></label>';
-      }).join('');
-      var showKit = form.type.value === 'bytovka' || form.type.value === 'hozblok';
-      $('fWall').hidden = !(form.type.value === 'bytovka');
-      $('fRoof').hidden = !showKit;
-      var n = 0;
-      [$('fWall'), $('fRoof'), $('fOpt')].forEach(function (f) { if (!f.hidden) { n++; f.querySelector('legend b').textContent = n + 2; } });
-    }
-    function calc() {
-      var key = form.type.value, t = CALC.types[key];
-      var size = t.sizes[+form.size.value || 0];
-      var area = size[1], rows = [], sum = size[2];
-      rows.push([t.name + ' ' + size[0], size[2]]);
-      if (!$('fWall').hidden) { var w = CALC.wall[+form.wall.value || 0]; if (w[1]) { var v = w[1] * area; sum += v; rows.push(['Утепление ' + w[0], v]); } }
-      if (!$('fRoof').hidden) { var r = CALC.roof[+form.roof.value || 0]; if (r[1]) { var vr = r[1] * area; sum += vr; rows.push([r[0], vr]); } }
-      Array.prototype.forEach.call(form.querySelectorAll('input[name=opt]:checked'), function (c) {
-        var o = CALC.opts[key][+c.value]; sum += o[1]; rows.push([o[0], o[1]]);
-      });
-      $('cSum').innerHTML = 'от <b>' + fmt(sum) + ' ₽</b>';
-      $('cRows').innerHTML = rows.map(function (x) { return '<li><span>' + x[0] + '</span><b>' + fmt(x[1]) + ' ₽</b></li>'; }).join('');
-    }
-    form.addEventListener('change', function (e) { if (e.target.name === 'type') build(); calc(); });
-    $('cDemo').hidden = !CALC.demo;
-    // «Рассчитать стоимость» в каталоге выбирает нужное изделие
-    Array.prototype.forEach.call(document.querySelectorAll('.cat__link[data-type]'), function (a) {
-      a.addEventListener('click', function () {
-        var r = form.querySelector('input[name=type][value=' + a.getAttribute('data-type') + ']');
-        if (r) { r.checked = true; build(); calc(); }
-      });
-    });
-    build(); calc();
-  })();
-  Vibe.mount(document.querySelector('.v-page'));
-
-  // Титул: «стройка наоборот». Четыре кадра одного ракурса лежат стопкой (в DOM снизу вверх:
-  // участок, фундамент, каркас, дом). Прозрачность трёх верхних ведётся от --v-p акта:
-  // каждое состояние владеет четвертью пролёта, плато около 65% четверти, кроссфейд около 35%
-  // вокруг границы четвертей. Гаснет всегда верхний кадр, нижний под ним непрозрачный,
-  // поэтому переход чистый, без просвета сквозь два слоя. Подпись и шкала переключаются
-  // на середине кроссфейда.
-  (function () {
-    var act = document.getElementById('cover');
-    var imgs = act.querySelectorAll('.cover__img');
-    var states = document.getElementById('coverState').children;
-    var dots = document.getElementById('coverScale').children;
-    var n = imgs.length, live = false, lastF = -1, lastK = -1;
-    function ss(t) { t = t < 0 ? 0 : t > 1 ? 1 : t; return t * t * (3 - 2 * t); }
-    function paint(f) {
-      // f: 0 = дом, n-1 = участок. Слой i (считая снизу) держится, пока f < n-1-i, и гаснет за один шаг
-      for (var i = 1; i < n; i++) { var o = 1 - (f - (n - 1 - i)); imgs[i].style.opacity = (o < 0 ? 0 : o > 1 ? 1 : o).toFixed(3); }
-      var k = Math.round(f);
-      if (k !== lastK) {
-        lastK = k;
-        for (var j = 0; j < n; j++) {
-          states[j].classList.toggle('is-on', j === k);
-          dots[j].classList.toggle('is-on', j === k);
-          dots[j].classList.toggle('is-done', j < k);
-        }
-      }
-    }
-    function tick() {
-      var p = parseFloat(getComputedStyle(act).getPropertyValue('--v-p')) || 0;
-      var x = p * n, f = 0;
-      for (var b = 1; b < n; b++) f += ss((x - (b - 0.175)) / 0.35);
-      if (f !== lastF) { lastF = f; paint(f); }
-      if (live) requestAnimationFrame(tick);
-    }
-    new IntersectionObserver(function (es) { live = es[0].isIntersecting; if (live) tick(); }).observe(act);
-    tick();
-  })();
-
-  // Шапка: меню на телефоне и подсветка текущего раздела
-  (function () {
-    var b = document.getElementById('hdrBurger'), nav = document.getElementById('hdrNav');
-    function set(o) { nav.classList.toggle('is-open', o); b.setAttribute('aria-expanded', o ? 'true' : 'false'); }
-    b.addEventListener('click', function () { set(b.getAttribute('aria-expanded') !== 'true'); });
-    nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') set(false); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
-    var links = {};
-    Array.prototype.forEach.call(nav.querySelectorAll('a[href^="#"]'), function (a) { links[a.getAttribute('href').slice(1)] = a; });
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { var a = links[e.target.id]; if (a) a.classList.toggle('is-on', e.isIntersecting); });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    Object.keys(links).forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
-  })();
-
-  // Фирменный ход: линия стройки на полях. Пять точек-этапов заполняются
-  // по мере глав, активная подписана. Ведётся от положения интертитров.
-  // На тёплой плашке (глава 2) и тёмной главе (4) фолио меняет схему.
-  (function () {
-    var chapters = Array.prototype.slice.call(document.querySelectorAll('[data-chapter]'));
-    var end = document.getElementById('cena');
-    var folio = document.getElementById('folio'), fill = document.getElementById('folioFill');
-    var dots = Array.prototype.slice.call(folio.querySelectorAll('.folio__dot'));
-    var fm = document.getElementById('folioM'), fmText = document.getElementById('folioMText'), fmBar = document.getElementById('folioMBar');
-    var names = ['Основание', 'Каркас', 'Кровля', 'Отделка', 'Доставка'];
-    var darkFrom = 0, darkTo = 0, warmFrom = 0, warmTo = 0, tops = [], endTop = 0, lastIdx = -2, lastDark = null, lastWarm = null, ticking = false;
-
-    function measure() {
-      var y = window.scrollY;
-      tops = chapters.map(function (c) { return c.getBoundingClientRect().top + y; });
-      endTop = end.getBoundingClientRect().top + y;
-      var d1 = document.querySelector('.inter--dark'), d2 = document.querySelector('.chapter--dark'), w = document.querySelector('.inter--wood');
-      darkFrom = d1.getBoundingClientRect().top + y;
-      darkTo = d2.getBoundingClientRect().bottom + y;
-      warmFrom = w.getBoundingClientRect().top + y;
-      warmTo = w.getBoundingClientRect().bottom + y;
-      lastIdx = -2; lastDark = null; lastWarm = null; frame();
-    }
-    function frame() {
-      ticking = false;
-      var y = window.scrollY, vh = window.innerHeight, probe = y + vh * 0.45;
-      var idx = -1, i;
-      for (i = 0; i < tops.length; i++) if (probe >= tops[i]) idx = i;
-      var frac;
-      if (idx < 0) frac = 0;
-      else {
-        var a = tops[idx], b = idx + 1 < tops.length ? tops[idx + 1] : endTop;
-        frac = (idx + Math.min(Math.max((probe - a) / Math.max(b - a, 1), 0), 1)) / (tops.length - 1);
-      }
-      if (probe >= endTop) frac = 1;
-      frac = Math.min(frac, 1);
-      fill.style.height = (frac * 100).toFixed(2) + '%';
-      fmBar.style.transform = 'scaleX(' + frac.toFixed(3) + ')';
-      var dark = probe >= darkFrom && probe < darkTo;
-      if (dark !== lastDark) { lastDark = dark; folio.classList.toggle('is-dark', dark); fm.classList.toggle('is-dark', dark); }
-      var warm = probe >= warmFrom && probe < warmTo;
-      if (warm !== lastWarm) { lastWarm = warm; folio.classList.toggle('is-warm', warm); fm.classList.toggle('is-warm', warm); }
-      if (idx !== lastIdx) {
-        lastIdx = idx;
-        dots.forEach(function (d, k) {
-          d.classList.toggle('is-done', k < idx);
-          d.classList.toggle('is-active', k === idx);
-        });
-        fm.classList.toggle('is-on', idx >= 0);
-        if (idx >= 0) fmText.innerHTML = '<b>0' + (idx + 1) + '</b> · ' + names[idx];
-      }
-    }
-    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', function () { clearTimeout(measure._t); measure._t = setTimeout(measure, 150); });
-    window.addEventListener('load', measure);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
-    measure();
-  })();
+    </aside>
+  </div>
+</section>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"БытовкаСтрой","url":"https://bytovki.example","telephone":"+7-800-555-01-42","email":"zakaz@bytovki.example","description":"Деревянные бытовки: изготовление, доставка и установка (демонстрационный сайт, данные вымышлены)."}
 </script>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-title">БытовкаСтрой</p>
+      <p>Деревянные бытовки: строим, привозим и устанавливаем сами.</p>
+    </div>
+    <div>
+      <p class="footer-title">Разделы</p>
+      <ul>
+        <li><a href="#modeli">Модели</a></li>
+        <li><a href="#uslugi">Услуги</a></li>
+        <li><a href="#primery">Примеры</a></li>
+        <li><a href="#o-kompanii">О компании</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-title">Контакты</p>
+      <p><a href="tel:+78005550142">8 800 555-01-42</a><br><a href="mailto:zakaz@bytovki.example">zakaz@bytovki.example</a></p>
+    </div>
+  </div>
+  <div class="container footer-bottom"><small>© 2026 БытовкаСтрой. Демонстрационный сайт, данные вымышлены.</small></div>
+</footer>
 </body>
 </html>
