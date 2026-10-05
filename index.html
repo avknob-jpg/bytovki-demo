@@ -324,27 +324,6 @@
     .frame__fig figcaption { bottom: var(--v-4); right: var(--v-gutter); }
   }
 
-  /* ---- глава 6: отзывы с Яндекс.Карт ------------------------------------------- */
-  .reviews__head { display: flex; flex-wrap: wrap; gap: var(--v-6); align-items: end; justify-content: space-between; margin-bottom: var(--v-7); }
-  .reviews__head h2 { font-size: var(--v-t-2xl); max-width: 16ch; }
-  .reviews__head .v-label { display: block; margin-bottom: var(--v-3); }
-  .reviews__rating { display: grid; grid-template-columns: auto 1fr; gap: var(--v-1) var(--v-4); align-items: center; font-size: var(--v-t-sm); color: var(--v-ink-soft); }
-  .reviews__num { grid-row: 1 / span 2; font-family: var(--v-font-display); font-weight: 700; font-size: var(--v-t-2xl); line-height: 1; color: var(--v-ink); }
-  .reviews__rating a { color: var(--v-ink); font-weight: 500; text-decoration-color: var(--v-accent); display: inline-block; padding: .7em 0; margin: -.7em 0; }
-  .reviews__stars { --size: 1.1rem; display: inline-block; width: calc(var(--size) * 5); height: var(--size);
-    background: linear-gradient(90deg, var(--v-accent) calc(var(--r, 0) / 5 * 100%), var(--v-hair-strong) 0);
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z'/%3E%3C/svg%3E") 0 0 / var(--size) var(--size) repeat-x;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z'/%3E%3C/svg%3E") 0 0 / var(--size) var(--size) repeat-x; }
-  .reviews__stars--sm { --size: .8rem; vertical-align: middle; }
-  .reviews__list { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: var(--v-6); align-items: start; }
-  .reviews__item { padding-top: var(--v-5); border-top: 1px solid var(--v-hair); }
-  .reviews__item--big .reviews__text { font-size: var(--v-t-lg); line-height: 1.4; }
-  .reviews__text { text-wrap: pretty; }
-  .reviews .reviews__meta { margin-top: var(--v-4); font-size: var(--v-t-sm); color: var(--v-ink-soft); }
-  .reviews__meta b { color: var(--v-ink); font-weight: 600; }
-  .reviews .reviews__note { margin-top: var(--v-7); padding-top: var(--v-4); border-top: 1px solid var(--v-hair); font-size: var(--v-t-xs); color: var(--v-ink-soft); max-width: 60ch; }
-  @media (max-width: 860px) { .reviews__list { grid-template-columns: 1fr; } .reviews__head { margin-bottom: var(--v-6); } }
-
   /* ---- что входит в цену ----------------------------------------------------- */
   .estimate { display: grid; grid-template-columns: 7fr 4fr; gap: var(--v-8) clamp(2rem, 6vw, 6rem); align-items: start; }
   .estimate__intro { max-width: 52ch; }
@@ -456,7 +435,7 @@
   .v-page .v-wrap { width: min(100% - 2 * var(--v-gutter) - 2 * clamp(0rem, 4vw, 3.5rem), 76rem); margin-inline: auto; }
   @media (max-width: 860px) { .v-page .v-wrap { width: min(100% - 2 * var(--v-gutter), 76rem); } }
   @media (hover: hover) and (pointer: fine) {
-    .toc a:hover, .title__mark:hover, .colophon__msg a:hover, .reviews__rating a:hover { color: var(--v-accent); }
+    .toc a:hover, .title__mark:hover, .colophon__msg a:hover { color: var(--v-accent); }
     .toc a:hover img { opacity: .92; }
     .folio__cta:hover { text-decoration: underline; text-underline-offset: .2em; }
   }
@@ -474,7 +453,6 @@
         <a href="#kalkulyator">Калькулятор</a>
         <a href="#etapy">Этапы</a>
         <a href="#cena">Состав цены</a>
-        <a href="#otzyvy">Отзывы</a>
         <a href="#raschet">Контакты</a>
         <a class="hdr__navtel" href="tel:{{телефон}}">{{телефон}}</a>
       </nav>
@@ -856,51 +834,6 @@
       </div>
     </section>
 
-    <!-- ИНТЕРТИТР 6 · ОТЗЫВЫ -->
-    <section class="inter" data-v-act="flow" id="ch6" aria-label="Глава 6. Отзывы">
-      <div class="v-wrap inter__grid" data-v-in data-v-stagger="90">
-        <div class="inter__num" aria-hidden="true">0<em>6</em></div>
-        <div class="inter__text">
-          <span class="v-label">Глава шестая</span>
-          <h2 class="v-display">Отзывы</h2>
-          <p>Как есть, с карточки компании на Яндекс.Картах: имя, дата, оценка. Ссылка на карточку рядом, проверить можно за минуту.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ГЛАВА 6 · ОТЗЫВЫ С ЯНДЕКС.КАРТ. Слоты заполняются из карточки клиента; выдуманных отзывов здесь не бывает.
-         Если у клиента отзывов нет, удалить интертитр 6 и эту секцию целиком -->
-    <section class="v-section" data-v-act="flow" id="otzyvy" aria-label="Отзывы с Яндекс.Карт">
-      <div class="v-wrap reviews">
-        <div class="reviews__head" data-v-in data-v-stagger="60">
-          <div>
-            <span class="v-label">Яндекс.Карты</span>
-            <h2 class="v-display">Что пишут на Яндекс.Картах</h2>
-          </div>
-          <div class="reviews__rating">
-            <span class="reviews__num v-nums">{{рейтинг}}</span>
-            <span class="reviews__stars" data-r="{{рейтинг}}" role="img" aria-label="рейтинг {{рейтинг}} из 5"></span>
-            <span>{{отзывов}} отзывов · <a href="{{ссылка-карты}}" rel="noopener">Читать все отзывы</a></span>
-          </div>
-        </div>
-        <ul class="reviews__list" data-v-in data-v-stagger="90">
-          <li class="reviews__item reviews__item--big">
-            <p class="reviews__text">«{{отзыв 1}}»</p>
-            <p class="reviews__meta"><b>{{имя 1}}</b> · {{дата 1}} · <span class="reviews__stars reviews__stars--sm" data-r="{{оценка 1}}" role="img" aria-label="оценка {{оценка 1}} из 5"></span></p>
-          </li>
-          <li class="reviews__item">
-            <p class="reviews__text">«{{отзыв 2}}»</p>
-            <p class="reviews__meta"><b>{{имя 2}}</b> · {{дата 2}} · <span class="reviews__stars reviews__stars--sm" data-r="{{оценка 2}}" role="img" aria-label="оценка {{оценка 2}} из 5"></span></p>
-          </li>
-          <li class="reviews__item">
-            <p class="reviews__text">«{{отзыв 3}}»</p>
-            <p class="reviews__meta"><b>{{имя 3}}</b> · {{дата 3}} · <span class="reviews__stars reviews__stars--sm" data-r="{{оценка 3}}" role="img" aria-label="оценка {{оценка 3}} из 5"></span></p>
-          </li>
-        </ul>
-        <p class="reviews__note">Тексты отзывов приводим без правок, как они опубликованы на Яндекс.Картах. Оценка и число отзывов обновляются вместе с карточкой.</p>
-      </div>
-    </section>
-
     <!-- ЧТО ВХОДИТ В ЦЕНУ -->
     <section class="v-section" data-v-act="flow" id="cena" aria-label="Что входит в цену">
       <div class="v-wrap estimate">
@@ -1091,18 +1024,13 @@
     }, { rootMargin: '-45% 0px -50% 0px' });
     Object.keys(links).forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
   })();
-  // Звёзды отзывов: заливка по числу из data-r («4,8» или «4.8»). Пока слот не заполнен, звёзды пустые.
-  Array.prototype.forEach.call(document.querySelectorAll('.reviews__stars[data-r]'), function (el) {
-    var n = parseFloat(String(el.getAttribute('data-r')).replace(',', '.'));
-    el.style.setProperty('--r', isNaN(n) ? 0 : Math.min(Math.max(n, 0), 5));
-  });
 
   // Фирменный ход: линия стройки на полях. Пять точек-этапов заполняются
   // по мере глав, активная подписана. Ведётся от положения интертитров.
   // На тёплой плашке (глава 2) и тёмной главе (4) фолио меняет схему.
   (function () {
     var chapters = Array.prototype.slice.call(document.querySelectorAll('[data-chapter]'));
-    var end = document.getElementById('ch6');
+    var end = document.getElementById('cena');
     var folio = document.getElementById('folio'), fill = document.getElementById('folioFill');
     var dots = Array.prototype.slice.call(folio.querySelectorAll('.folio__dot'));
     var fm = document.getElementById('folioM'), fmText = document.getElementById('folioMText'), fmBar = document.getElementById('folioMBar');
